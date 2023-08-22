@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Products</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+    <div id="app">
+        <div class="products">
+            <div class="menu-sort">
+                <div class="sort-type">
+                    <p>по цене:</p>
+                </div>
+                <div class="sort-buttons">
+                    <button class="sort-button" @click="sortPrice('up')">&#8595;</button>
+                    <button class="sort-button" @click="sortPrice('down')">&#8593;</button>
+                </div>
+                <div class="sort-type">
+                    <p>по названию:</p>
+                </div>
+                <div class="sort-buttons">
+                    <button class="sort-button" @click="sortName('up')">&#8595;</button>
+                    <button class="sort-button" @click="sortName('down')">&#8593;</button>
+                </div>
+            </div>
+
+            <p class="product" v-for="(product, idx) in products" :key="idx">{{ `${product.name} - ${product.price}` }}</p>
+        </div>
+    </div>
+
+    <script src="src/products.js"></script>
+
+</body>
+</html>

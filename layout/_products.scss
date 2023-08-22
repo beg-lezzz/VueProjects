@@ -1,0 +1,15 @@
+.products {
+  padding: 15px;
+}
+
+.menu-sort {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.sort-buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
