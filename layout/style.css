@@ -1,7 +1,5 @@
 * {
   margin: 0;
-  padding: 0;
-  box-sizing: border-box;
   text-decoration: none;
 }
 
@@ -581,6 +579,23 @@
   line-height: 150%; /* 24px */
   text-transform: capitalize;
   display: block;
+}
+
+.products {
+  padding: 30px;
+}
+
+.menu-sort {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.sort-buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 /*# sourceMappingURL=style.css.map */
