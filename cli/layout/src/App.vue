@@ -1,6 +1,12 @@
 <template>
   <div id="app">
     <HeaderComponent @MenuElement="chooseElement" />
+    <div class="products center">
+          <ProductDetails />
+          <ProductDetails />
+          <ProductDetails />
+          <ProductDetails />
+    </div>
     <component :is="activeElem" :imgBanner="imgBanner"/>
     <FooterComponent />
 <!--    <TopBannerComponent :imgBanner="imgBanner"/>-->
@@ -15,6 +21,7 @@ import TopComponent from '@/components/TopComponent.vue'
 import BlogListComponent from '@/components/BlogListComponent.vue'
 import TopBannerComponent from './components/TopBannerComponent.vue'
 import FooterComponent from '@/components/img/FooterComponent.vue'
+import ProductDetails from '@/components/ProductDetails.vue'
 // import TopComponent from '@/components/TopComponent.vue'
 
 export default {
@@ -38,6 +45,7 @@ export default {
     }
   },
   components: {
+    ProductDetails,
     FooterComponent,
     TopBannerComponent,
     HeaderComponent,
@@ -67,5 +75,12 @@ export default {
 .center {
   padding-left: calc(50% - 600px);
   padding-right: calc(50% - 600px);
+}
+
+.products {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin: 50px 0;
 }
 </style>
