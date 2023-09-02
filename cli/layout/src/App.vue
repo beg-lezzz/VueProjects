@@ -20,7 +20,7 @@ import HeaderComponent from '@/components/HeaderComponent.vue'
 import TopComponent from '@/components/TopComponent.vue'
 import BlogListComponent from '@/components/BlogListComponent.vue'
 import TopBannerComponent from './components/TopBannerComponent.vue'
-import FooterComponent from '@/components/img/FooterComponent.vue'
+import FooterComponent from '@/components/FooterComponent.vue'
 import ProductDetails from '@/components/ProductDetails.vue'
 // import TopComponent from '@/components/TopComponent.vue'
 
