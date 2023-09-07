@@ -16,8 +16,8 @@
 </template>
 
 <script>
-import BlogComponent from '@/components/BlogComponent.vue'
-import BlogDetails from '@/components/BlogDetails.vue'
+import BlogComponent from '@/components/blog/BlogComponent.vue'
+import BlogDetails from '@/components/blog/BlogDetails.vue'
 
 export default {
   name: 'BlogListComponent',

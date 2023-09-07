@@ -1,13 +1,13 @@
 <template>
   <div class="header-logo">
-    <a :href=logo.href>
-      <img src="@/components/img/logo.jpg" alt="logo">
-    </a>
-    <a :href=logo.href>
+    <router-link :to="logo.href">
+      <img src="../img/logo.jpg" alt="logo">
+    </router-link>
+    <router-link :to="logo.href">
       <p class="header-logo__text">
         {{ logo.header }}
       </p>
-    </a>
+    </router-link>
   </div>
 </template>
 
@@ -22,8 +22,6 @@ export default {
 .header {
   &-logo {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
     align-items: center;
     gap: 10px;
 

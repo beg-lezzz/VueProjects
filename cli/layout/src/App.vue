@@ -1,31 +1,36 @@
 <template>
   <div id="app">
-    <HeaderComponent @MenuElement="chooseElement" />
-    <div class="products center">
-          <ProductDetails />
-          <ProductDetails />
-          <ProductDetails />
-          <ProductDetails />
-    </div>
-    <component :is="activeElem" :imgBanner="imgBanner"/>
-    <FooterComponent />
-<!--    <TopBannerComponent :imgBanner="imgBanner"/>-->
-<!--    <TopComponent />-->
-<!--    <BlogListComponent class="center"/>-->
+    <router-view />
+<!--&lt;!&ndash;    <TestStateComponent />&ndash;&gt;-->
+<!--    <HeaderComponent @MenuElement="chooseElement" />-->
+<!--    <div class="products center">-->
+<!--      <ProductDetails />-->
+<!--      <ProductDetails />-->
+<!--      <ProductDetails />-->
+<!--      <ProductDetails />-->
+<!--    </div>-->
+<!--    <component :is="activeElem" :imgBanner="imgBanner"/>-->
+<!--    <FooterComponent />-->
+    <!--    <TopBannerComponent :imgBanner="imgBanner"/>-->
+    <!--    <TopComponent />-->
+    <!--    <BlogListComponent class="center"/>-->
   </div>
 </template>
 
 <script>
-import HeaderComponent from '@/components/HeaderComponent.vue'
-import TopComponent from '@/components/TopComponent.vue'
-import BlogListComponent from '@/components/BlogListComponent.vue'
-import TopBannerComponent from './components/TopBannerComponent.vue'
-import FooterComponent from '@/components/FooterComponent.vue'
-import ProductDetails from '@/components/ProductDetails.vue'
+// import HeaderComponent from '@/components/header/HeaderComponent.vue'
+// import TopComponent from '@/components/TopComponent.vue'
+// import BlogListComponent from '@/components/blog/BlogListComponent.vue'
+// import TopBannerComponent from './components/TopBannerComponent.vue'
+// import FooterComponent from '@/components/FooterComponent.vue'
+// import ProductDetails from '@/components/ProductDetails.vue'
+// import TestStateComponent from '@/components/TestStateComponent.vue'
+import store from '@/store'
 // import TopComponent from '@/components/TopComponent.vue'
 
 export default {
   name: 'App',
+  store,
   methods: {
     chooseElement (nameElement) {
       if (nameElement === 'Home') {
@@ -45,12 +50,13 @@ export default {
     }
   },
   components: {
-    ProductDetails,
-    FooterComponent,
-    TopBannerComponent,
-    HeaderComponent,
-    TopComponent,
-    BlogListComponent
+    // TestStateComponent
+    // ProductDetails,
+    // FooterComponent,
+    // TopBannerComponent,
+    // HeaderComponent,
+    // TopComponent,
+    // BlogListComponent
   }
 }
 </script>

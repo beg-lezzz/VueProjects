@@ -2,14 +2,14 @@
   <div class="header center">
     <div class="header-content">
       <LogoComponent :logo="logo"/>
-      <MenuComponent @MenuElement="chooseElement" :menu="menu" />
+      <MenuComponent :menu="menu" :direction='direction' />
     </div>
   </div>
 </template>
 
 <script>
-import MenuComponent from '@/components/MenuComponent.vue'
-import LogoComponent from '@/components/LogoComponent.vue'
+import MenuComponent from '@/components/header/MenuComponent.vue'
+import LogoComponent from '@/components/header/LogoComponent.vue'
 export default {
   name: 'HeaderComponent',
   methods: {
@@ -21,18 +21,19 @@ export default {
   },
   data () {
     return {
+      direction: 'row',
       menu: [
         {
           name: 'Home',
-          href: '#'
+          href: '/'
         },
         {
           name: 'Project',
-          href: '#'
+          href: '/project'
         },
         {
           name: 'Blog',
-          href: '#'
+          href: '/blog'
         }
       ],
       logo: {

@@ -2,16 +2,17 @@
   <div class="footer center">
     <div class="footer-content">
       <div class="footer-content-company">
-        <div class="footer-logo">
-          <a href="#"><svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M0 34.0003H13.4588V24.499C13.4588 22.4853 15.0898 20.8543 17.1035 20.8543C19.1172 20.8543 20.7482 22.4853 20.7482 24.499V34.0003H33.9975V0C15.2211 0 0 15.2211 0 34.0003Z" fill="#CDA274"/>
-          </svg></a>
-          <a href="#">
-            <p class="footer-logo__text">
-              Interno
-            </p>
-          </a>
-        </div>
+<!--        <div class="footer-logo">-->
+<!--          <a href="#"><svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">-->
+<!--            <path d="M0 34.0003H13.4588V24.499C13.4588 22.4853 15.0898 20.8543 17.1035 20.8543C19.1172 20.8543 20.7482 22.4853 20.7482 24.499V34.0003H33.9975V0C15.2211 0 0 15.2211 0 34.0003Z" fill="#CDA274"/>-->
+<!--          </svg></a>-->
+<!--          <a href="#">-->
+<!--            <p class="footer-logo__text">-->
+<!--              Interno-->
+<!--            </p>-->
+<!--          </a>-->
+<!--        </div>-->
+        <logo-component :logo="logo" />
         <div class="footer-content-company-info">
           <p class="footer-content-company-info__text">
             It is a long established fact that a reader will be distracted lookings.
@@ -30,18 +31,19 @@
           </div>
         </div>
       </div>
-      <div class="footer-content-pages">
-        <div class="footer-content-pages-wrapper">
-          <p class="footer-content-pages__header">
-            Pages
-          </p>
-          <ul class="footer-content-pages__ul">
-            <li class="footer-content-pages__li">Home</li>
-            <li class="footer-content-pages__li">Project</li>
-            <li class="footer-content-pages__li">Blog</li>
-          </ul>
-        </div>
-      </div>
+<!--      <div class="footer-content-pages">-->
+<!--        <div class="footer-content-pages-wrapper">-->
+<!--          <p class="footer-content-pages__header">-->
+<!--            Pages-->
+<!--          </p>-->
+<!--          <ul class="footer-content-pages__ul">-->
+<!--            <li class="footer-content-pages__li">Home</li>-->
+<!--            <li class="footer-content-pages__li">Project</li>-->
+<!--            <li class="footer-content-pages__li">Blog</li>-->
+<!--          </ul>-->
+<!--        </div>-->
+<!--      </div>-->
+      <MenuComponent @MenuElement="chooseElement" :menu="menu" :direction="direction" :header="header"/>
       <div class="footer-content-contacts">
         <p class="footer-content-contacts__header">Contact</p>
         <p class="footer-content-contacts__attributes">55 East Birchwood Ave. Brooklyn, New York 11201</p>
@@ -53,8 +55,44 @@
 </template>
 
 <script>
+import MenuComponent from '@/components/header/MenuComponent.vue'
+import LogoComponent from '@/components/header/LogoComponent.vue'
+
 export default {
-  name: 'FooterComponent'
+  name: 'FooterComponent',
+  data () {
+    return {
+      direction: 'column',
+      header: 'Pages',
+      menu: [
+        {
+          name: 'Home',
+          href: '/home'
+        },
+        {
+          name: 'Project',
+          href: '/project'
+        },
+        {
+          name: 'Blog',
+          href: '/blog'
+        }
+      ],
+      logo: {
+        header: 'Interno',
+        href: '#',
+        img: 'data:image/jpeg;base64,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'
+      }
+    }
+  },
+  methods: {
+    chooseElement (nameMenu) {
+      // this.activeElem = name
+      this.$emit('MenuElement', nameMenu)
+      console.log(`header ${nameMenu}`)
+    }
+  },
+  components: { LogoComponent, MenuComponent }
 }
 </script>
 
@@ -100,6 +138,7 @@ export default {
           font-weight: 400;
           line-height: 150%; /* 33px */
           letter-spacing: 0.22px;
+          text-align: left;
         }
       }
 
@@ -146,6 +185,7 @@ export default {
 
     &-contacts {
       width: 33%;
+      text-align: left;
 
       &__header {
         color: #292F36;
