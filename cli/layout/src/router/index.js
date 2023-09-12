@@ -1,9 +1,10 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import NotFound from '@/views/NotFound.vue'
 import Home from '@/views/Home.vue'
-import Project from '@/views/Project.vue'
-import Blog from '@/views/Blog.vue'
+// import Blog from '@/views/Blog.vue'
+import OurProjects from '@/views/OurProjects.vue'
+import Page404 from '@/views/Page404.vue'
+import BlogAllComponent from '@/components/blog/BlogAllComponent.vue'
 
 Vue.use(VueRouter)
 
@@ -16,17 +17,17 @@ const routes = [
   {
     path: '/blog',
     name: 'blog',
-    component: Blog
+    component: BlogAllComponent
   },
   {
     path: '/project',
     name: 'project',
-    component: Project
+    component: OurProjects
   },
   {
     path: '*',
     name: 'notfound',
-    component: NotFound
+    component: Page404
   }
 ]
 

@@ -1,0 +1,583 @@
+<template>
+  <div class="posts center">
+    <div class="posts-content">
+      <div class="posts-content-wrapper">
+        <div class="posts-content-header">
+          Latest Post
+        </div>
+        <ArticleComponent
+          :article="getLastPost"
+          :direction="directionLast" />
+      </div>
+      <div class="posts-content-articles">
+        <div class="posts-content-articles-header">
+          <p class="posts-content-articles-header__text">
+            Articles & News
+          </p>
+        </div>
+        <div class="articles-content-cards">
+          <ArticleComponent v-for="(article, idx) in curArray" :key="idx" :article="article" :direction="directionArticle" />
+        </div>
+      </div>
+      <div class="pagination">
+        <div class="pagination-element" @click="clickPagination(i)" v-for="i in getPaginationLen + 1" :key="i.id" :class="{ black: i === currentPage }">{{ `${i === getPaginationLen + 1 ? '>' : i}` }}</div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+import ArticleComponent from '@/components/blog/ArticleComponent.vue'
+
+export default {
+  name: 'BlogAllComponent',
+  components: { ArticleComponent },
+  data () {
+    return {
+      articles: [
+        {
+          img: 'img/article-1.png',
+          textMini: 'Let’s Get Solution For Building Construction Work #1',
+          date: '26 December,2022',
+          badge: 'Kitchan Design',
+          header: 'Low Cost Latest Invented Interior Designing Ideas',
+          textFull: 'Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae turpis dignissim maximus.posuere in.Contrary to popular belief.\n' +
+            'Lorem Ipsum is not simply random text. It has roots in a piece of classica.'
+        },
+
+        {
+          img: 'img/article-2.png',
+          textMini: 'Let’s Get Solution For Building Construction Work #2',
+          date: '26 December,2022',
+          badge: 'Kitchan Design',
+          header: 'Low Cost Latest Invented Interior Designing Ideas',
+          textFull: 'Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae turpis dignissim maximus.posuere in.Contrary to popular belief.\n' +
+            'Lorem Ipsum is not simply random text. It has roots in a piece of classica.'
+        },
+
+        {
+          img: 'img/article-3.png',
+          textMini: 'Let’s Get Solution For Building Construction Work #3',
+          date: '26 December,2022',
+          badge: 'Kitchan Design',
+          header: 'Low Cost Latest Invented Interior Designing Ideas',
+          textFull: 'Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae turpis dignissim maximus.posuere in.Contrary to popular belief.\n' +
+            'Lorem Ipsum is not simply random text. It has roots in a piece of classica.'
+        },
+
+        {
+          img: 'img/article-1.png',
+          textMini: 'Let’s Get Solution For Building Construction Work #4',
+          date: '26 December,2022',
+          badge: 'Kitchan Design',
+          header: 'Low Cost Latest Invented Interior Designing Ideas',
+          textFull: 'Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae turpis dignissim maximus.posuere in.Contrary to popular belief.\n' +
+            'Lorem Ipsum is not simply random text. It has roots in a piece of classica.'
+        },
+
+        {
+          img: 'img/article-2.png',
+          textMini: 'Let’s Get Solution For Building Construction Work #5',
+          date: '26 December,2022',
+          badge: 'Kitchan Design',
+          header: 'Low Cost Latest Invented Interior Designing Ideas',
+          textFull: 'Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae turpis dignissim maximus.posuere in.Contrary to popular belief.\n' +
+            'Lorem Ipsum is not simply random text. It has roots in a piece of classica.'
+        },
+
+        {
+          img: 'img/article-3.png',
+          textMini: 'Let’s Get Solution For Building Construction Work #6',
+          date: '26 December,2022',
+          badge: 'Kitchan Design',
+          header: 'Low Cost Latest Invented Interior Designing Ideas',
+          textFull: 'Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae turpis dignissim maximus.posuere in.Contrary to popular belief.\n' +
+            'Lorem Ipsum is not simply random text. It has roots in a piece of classica.'
+        },
+
+        {
+          img: 'img/article-1.png',
+          textMini: 'Let’s Get Solution For Building Construction Work #7',
+          date: '26 December,2022',
+          badge: 'Kitchan Design',
+          header: 'Low Cost Latest Invented Interior Designing Ideas',
+          textFull: 'Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae turpis dignissim maximus.posuere in.Contrary to popular belief.\n' +
+            'Lorem Ipsum is not simply random text. It has roots in a piece of classica.'
+        },
+
+        {
+          img: 'img/article-2.png',
+          textMini: 'Let’s Get Solution For Building Construction Work #8',
+          date: '26 December,2022',
+          badge: 'Kitchan Design',
+          header: 'Low Cost Latest Invented Interior Designing Ideas',
+          textFull: 'Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae turpis dignissim maximus.posuere in.Contrary to popular belief.\n' +
+            'Lorem Ipsum is not simply random text. It has roots in a piece of classica.'
+        },
+
+        {
+          img: 'img/article-3.png',
+          textMini: 'Let’s Get Solution For Building Construction Work #9',
+          date: '26 December,2022',
+          badge: 'Kitchan Design',
+          header: 'Low Cost Latest Invented Interior Designing Ideas',
+          textFull: 'Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae turpis dignissim maximus.posuere in.Contrary to popular belief.\n' +
+            'Lorem Ipsum is not simply random text. It has roots in a piece of classica.'
+        },
+
+        {
+          img: 'img/article-1.png',
+          textMini: 'Let’s Get Solution For Building Construction Work #10',
+          date: '26 December,2022',
+          badge: 'Kitchan Design',
+          header: 'Low Cost Latest Invented Interior Designing Ideas',
+          textFull: 'Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae turpis dignissim maximus.posuere in.Contrary to popular belief.\n' +
+            'Lorem Ipsum is not simply random text. It has roots in a piece of classica.'
+        },
+
+        {
+          img: 'img/article-2.png',
+          textMini: 'Let’s Get Solution For Building Construction Work #11',
+          date: '26 December,2022',
+          badge: 'Kitchan Design',
+          header: 'Low Cost Latest Invented Interior Designing Ideas',
+          textFull: 'Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae turpis dignissim maximus.posuere in.Contrary to popular belief.\n' +
+            'Lorem Ipsum is not simply random text. It has roots in a piece of classica.'
+        },
+
+        {
+          img: 'img/article-3.png',
+          textMini: 'Let’s Get Solution For Building Construction Work #12',
+          date: '26 December,2022',
+          badge: 'Kitchan Design',
+          header: 'Low Cost Latest Invented Interior Designing Ideas',
+          textFull: 'Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae turpis dignissim maximus.posuere in.Contrary to popular belief.\n' +
+            'Lorem Ipsum is not simply random text. It has roots in a piece of classica.'
+        },
+
+        {
+          img: 'img/article-1.png',
+          textMini: 'Let’s Get Solution For Building Construction Work #13',
+          date: '26 December,2022',
+          badge: 'Kitchan Design',
+          header: 'Low Cost Latest Invented Interior Designing Ideas',
+          textFull: 'Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae turpis dignissim maximus.posuere in.Contrary to popular belief.\n' +
+            'Lorem Ipsum is not simply random text. It has roots in a piece of classica.'
+        },
+
+        {
+          img: 'img/article-2.png',
+          textMini: 'Let’s Get Solution For Building Construction Work #14',
+          date: '26 December,2022',
+          badge: 'Kitchan Design',
+          header: 'Low Cost Latest Invented Interior Designing Ideas',
+          textFull: 'Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae turpis dignissim maximus.posuere in.Contrary to popular belief.\n' +
+            'Lorem Ipsum is not simply random text. It has roots in a piece of classica.'
+        },
+
+        {
+          img: 'img/article-3.png',
+          textMini: 'Let’s Get Solution For Building Construction Work #15',
+          date: '26 December,2022',
+          badge: 'Kitchan Design',
+          header: 'Low Cost Latest Invented Interior Designing Ideas',
+          textFull: 'Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae turpis dignissim maximus.posuere in.Contrary to popular belief.\n' +
+            'Lorem Ipsum is not simply random text. It has roots in a piece of classica.'
+        },
+
+        {
+          img: 'img/article-1.png',
+          textMini: 'Let’s Get Solution For Building Construction Work #16',
+          date: '26 December,2022',
+          badge: 'Kitchan Design',
+          header: 'Low Cost Latest Invented Interior Designing Ideas',
+          textFull: 'Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae turpis dignissim maximus.posuere in.Contrary to popular belief.\n' +
+            'Lorem Ipsum is not simply random text. It has roots in a piece of classica.'
+        },
+
+        {
+          img: 'img/article-2.png',
+          textMini: 'Let’s Get Solution For Building Construction Work #17',
+          date: '26 December,2022',
+          badge: 'Kitchan Design',
+          header: 'Low Cost Latest Invented Interior Designing Ideas',
+          textFull: 'Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae turpis dignissim maximus.posuere in.Contrary to popular belief.\n' +
+            'Lorem Ipsum is not simply random text. It has roots in a piece of classica.'
+        },
+
+        {
+          img: 'img/article-3.png',
+          textMini: 'Let’s Get Solution For Building Construction Work #18',
+          date: '26 December,2022',
+          badge: 'Kitchan Design',
+          header: 'Low Cost Latest Invented Interior Designing Ideas',
+          textFull: 'Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae turpis dignissim maximus.posuere in.Contrary to popular belief.\n' +
+            'Lorem Ipsum is not simply random text. It has roots in a piece of classica.'
+        },
+
+        {
+          img: 'img/article-1.png',
+          textMini: 'Let’s Get Solution For Building Construction Work #19',
+          date: '26 December,2022',
+          badge: 'Kitchan Design',
+          header: 'Low Cost Latest Invented Interior Designing Ideas',
+          textFull: 'Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae turpis dignissim maximus.posuere in.Contrary to popular belief.\n' +
+            'Lorem Ipsum is not simply random text. It has roots in a piece of classica.'
+        },
+
+        {
+          img: 'img/article-2.png',
+          textMini: 'Let’s Get Solution For Building Construction Work #20',
+          date: '26 December,2022',
+          badge: 'Kitchan Design',
+          header: 'Low Cost Latest Invented Interior Designing Ideas',
+          textFull: 'Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae turpis dignissim maximus.posuere in.Contrary to popular belief.\n' +
+            'Lorem Ipsum is not simply random text. It has roots in a piece of classica.'
+        },
+
+        {
+          img: 'img/article-3.png',
+          textMini: 'Let’s Get Solution For Building Construction Work #21',
+          date: '26 December,2022',
+          badge: 'Kitchan Design',
+          header: 'Low Cost Latest Invented Interior Designing Ideas',
+          textFull: 'Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae turpis dignissim maximus.posuere in.Contrary to popular belief.\n' +
+            'Lorem Ipsum is not simply random text. It has roots in a piece of classica.'
+        },
+
+        {
+          img: 'img/article-1.png',
+          textMini: 'Let’s Get Solution For Building Construction Work #22',
+          date: '26 December,2022',
+          badge: 'Kitchan Design',
+          header: 'Low Cost Latest Invented Interior Designing Ideas',
+          textFull: 'Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae turpis dignissim maximus.posuere in.Contrary to popular belief.\n' +
+            'Lorem Ipsum is not simply random text. It has roots in a piece of classica.'
+        },
+
+        {
+          img: 'img/article-2.png',
+          textMini: 'Let’s Get Solution For Building Construction Work #23',
+          date: '26 December,2022',
+          badge: 'Kitchan Design',
+          header: 'Low Cost Latest Invented Interior Designing Ideas',
+          textFull: 'Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae turpis dignissim maximus.posuere in.Contrary to popular belief.\n' +
+            'Lorem Ipsum is not simply random text. It has roots in a piece of classica.'
+        },
+
+        {
+          img: 'img/article-3.png',
+          textMini: 'Let’s Get Solution For Building Construction Work #24',
+          date: '26 December,2022',
+          badge: 'Kitchan Design',
+          header: 'Low Cost Latest Invented Interior Designing Ideas',
+          textFull: 'Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae turpis dignissim maximus.posuere in.Contrary to popular belief.\n' +
+            'Lorem Ipsum is not simply random text. It has roots in a piece of classica.'
+        },
+
+        {
+          img: 'img/article-3.png',
+          textMini: 'Let’s Get Solution For Building Construction Work #25',
+          date: '26 December,2022',
+          badge: 'Kitchan Design',
+          header: 'Low Cost Latest Invented Interior Designing Ideas',
+          textFull: 'Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae turpis dignissim maximus.posuere in.Contrary to popular belief.\n' +
+            'Lorem Ipsum is not simply random text. It has roots in a piece of classica.'
+        }
+      ],
+      directionLast: 'row',
+      directionArticle: 'column',
+      currentPage: 1,
+      curArray: []
+    }
+  },
+
+  computed: {
+    getLastPost () {
+      return this.articles[0]
+    },
+    getPaginationLen () {
+      return Math.ceil(this.articles.length / 6)
+    }
+  },
+
+  methods: {
+    clickPagination (start) {
+      if (start < this.getPaginationLen + 1) {
+        this.currentPage = start
+        this.curArray = this.articles.slice(start * 6 - 6, start * 6)
+      } else if (start === this.getPaginationLen + 1) {
+        if (this.getPaginationLen > this.currentPage) {
+          this.currentPage++
+          this.curArray = this.articles.slice(this.currentPage * 6 - 6, this.currentPage * 6)
+        }
+      }
+    }
+  },
+  mounted () {
+    this.curArray = this.articles.slice(this.currentPage * 6 - 6, this.currentPage * 6)
+  }
+}
+</script>
+
+<style scoped lang="scss">
+.posts {
+
+  &-content {
+    margin-top: 150px;
+
+    &-wrapper {
+      margin-bottom: 150px;
+    }
+
+    &-articles-header {
+      margin-bottom: 30px;
+
+      &__text {
+        text-align: left;
+        color: #292F36;
+        font-family: DM Serif Display, sans-serif;
+        font-size: 50px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 125%; /* 62.5px */
+        letter-spacing: 1px;
+      }
+    }
+
+    &-header {
+      text-align: left;
+      color: #292F36;
+      font-family: DM Serif Display, sans-serif;
+      font-size: 50px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 125%; /* 62.5px */
+      letter-spacing: 1px;
+      margin-bottom: 27px;
+    }
+
+    &-last-post {
+      display: flex;
+      padding: 22px;
+      flex-direction: row;
+      align-items: center;
+      gap: 65px;
+
+      border-radius: 62px;
+      border: 1px solid #E7E7E7;
+      box-shadow: 0px 10px 30px 0px rgba(255, 255, 255, 0.25);
+
+      &-img {
+        width: 100%;
+        border-radius: 62px;
+
+        &-wrapper {
+          width: 50%;
+
+        }
+      }
+
+      &-info {
+        width: 50%;
+      }
+
+      &-text {
+        margin-right: 65px;
+        text-align: left;
+
+        &__head {
+          color: #292F36;
+          font-family: DM Serif Display, sans-serif;
+          font-size: 25px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 125%; /* 31.25px */
+          letter-spacing: 0.5px;
+          margin-bottom: 22px;
+        }
+
+        &__main {
+          color: #4D5053;
+          font-family: Jost, sans-serif;
+          font-size: 22px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 150%; /* 33px */
+          letter-spacing: 0.22px;
+          margin-bottom: 41px;
+        }
+
+      }
+
+      &-footer {
+        display: flex;
+        justify-content: space-between;
+
+        &__date {
+          color: #4D5053;
+          font-family: Jost, sans-serif;
+          font-size: 16px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 150%; /* 24px */
+          letter-spacing: 0.16px;
+          text-transform: capitalize;
+        }
+
+        &__button {
+
+        }
+      }
+    }
+  }
+}
+.articles {
+
+  &-info {
+    margin-top: 96px;
+    margin-bottom: 52px;
+    max-width: 811px;
+
+    &__header {
+      color: #292F36;
+      text-align: center;
+      font-family: DM Serif Display, sans-serif;
+      font-size: 50px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 125%; /* 62.5px */
+      letter-spacing: 1px;
+      margin-bottom: 12px;
+    }
+
+    &__text {
+      color: #4D5053;
+      text-align: center;
+      font-family: Jost, sans-serif;
+      font-size: 22px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 150%; /* 33px */
+      letter-spacing: 0.22px;
+    }
+  }
+
+  &-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &-content-cards {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 27px;
+
+    &-badge {
+      border-radius: 8px 8px 8px 0px;
+      background: #FFF;
+      position: absolute;
+      left: 31px;
+      bottom: 31px;
+      padding: 4px 5px 8px 11px;
+
+      &__text {
+        color: #4D5053;
+        font-family: Jost, sans-serif;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 150%; /* 24px */
+        letter-spacing: 0.16px;
+        text-transform: capitalize;
+      }
+    }
+
+    &-img {
+      border-top-right-radius: 62px;
+      border-top-left-radius: 62px;
+      width: 100%;
+
+      &-wrapper {
+        position: relative;
+        padding-bottom: 21px;
+      }
+    }
+
+    &-wrapper {
+      width: 30%;
+      padding: 21px;
+      border-radius: 62px;
+      border: 1px solid #E7E7E7;
+      box-shadow: 0 10px 30px 0 rgba(255, 255, 255, 0.25);
+
+      &:nth-child(2n) {
+        border-radius: 62px;
+        border: 1px solid #E7E7E7;
+        background: #F4F0EC;
+        box-shadow: 0 10px 30px 0 rgba(255, 255, 255, 0.25);
+      }
+
+      &:nth-child(2n) .articles-content-cards-footer__button svg circle{
+        fill: white ;
+      }
+    }
+
+    &-text {
+      padding-bottom: 30px;
+      text-align: left;
+
+      &__head {
+        color: #292F36;
+        font-family: DM Serif Display, sans-serif;
+        font-size: 25px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 125%; /* 31.25px */
+        letter-spacing: 0.5px;
+      }
+    }
+
+    &-footer {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 31px;
+
+      &__date {
+        color: #4D5053;
+        font-family: Jost, sans-serif;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 150%; /* 24px */
+        letter-spacing: 0.16px;
+        text-transform: capitalize;
+      }
+    }
+  }
+}
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  padding: 25px 0;
+  &-element {
+    cursor: pointer;
+    border: 1px solid #292F36;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 3em;
+    width: 3em;
+    border-radius: 50%;
+  }
+}
+.black {
+  background: #292F36;
+  color: #E7E7E7;
+}
+</style>

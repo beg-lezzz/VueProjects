@@ -184,6 +184,7 @@ export default {
       font-weight: 400;
       line-height: 125%; /* 31.25px */
       letter-spacing: 0.5px;
+      text-align: left;
     }
 
     &-description__crumb {
@@ -194,6 +195,7 @@ export default {
       font-weight: 400;
       line-height: 150%; /* 33px */
       letter-spacing: 0.22px;
+      text-align: left;
     }
 
     &__radius {

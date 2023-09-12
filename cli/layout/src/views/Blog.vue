@@ -1,18 +1,25 @@
 <template>
   <div class="wrapper">
-    <header-component />
-    <p>Projects</p>
-    <footer-component />
+    <TopBannerComponent :imgBanner="imgBanner" :textLabel="textLabel" :crumbs="crumbs" />
+    <BlogListComponent />
   </div>
 </template>
 
 <script>
-import HeaderComponent from '@/components/header/HeaderComponent.vue'
-import FooterComponent from '@/components/FooterComponent.vue'
+import BlogListComponent from '@/components/blog/BlogListComponent.vue'
+import TopBannerComponent from '@/components/TopBannerComponent.vue'
 
 export default {
   name: 'Home',
-  components: { FooterComponent, HeaderComponent }
+  data () {
+    return {
+      imgBanner: 'img/our-projects.png',
+      textLabel: 'Articles & News',
+      crumbs: 'Home / Blog',
+      tags: ['Bathroom', 'Bed Room', 'Kitchan', 'Living Area']
+    }
+  },
+  components: { TopBannerComponent, BlogListComponent }
 }
 </script>
 

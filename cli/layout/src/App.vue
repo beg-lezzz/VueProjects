@@ -1,62 +1,48 @@
 <template>
   <div id="app">
-    <router-view />
-<!--&lt;!&ndash;    <TestStateComponent />&ndash;&gt;-->
-<!--    <HeaderComponent @MenuElement="chooseElement" />-->
-<!--    <div class="products center">-->
-<!--      <ProductDetails />-->
-<!--      <ProductDetails />-->
-<!--      <ProductDetails />-->
-<!--      <ProductDetails />-->
-<!--    </div>-->
-<!--    <component :is="activeElem" :imgBanner="imgBanner"/>-->
-<!--    <FooterComponent />-->
-    <!--    <TopBannerComponent :imgBanner="imgBanner"/>-->
-    <!--    <TopComponent />-->
-    <!--    <BlogListComponent class="center"/>-->
+    <header-component />
+    <BlogAllComponent />
+<!--    <router-view />-->
+    <footer-component />
   </div>
 </template>
 
 <script>
-// import HeaderComponent from '@/components/header/HeaderComponent.vue'
-// import TopComponent from '@/components/TopComponent.vue'
-// import BlogListComponent from '@/components/blog/BlogListComponent.vue'
-// import TopBannerComponent from './components/TopBannerComponent.vue'
-// import FooterComponent from '@/components/FooterComponent.vue'
-// import ProductDetails from '@/components/ProductDetails.vue'
-// import TestStateComponent from '@/components/TestStateComponent.vue'
+
 import store from '@/store'
-// import TopComponent from '@/components/TopComponent.vue'
+import HeaderComponent from '@/components/header/HeaderComponent.vue'
+import FooterComponent from '@/components/FooterComponent.vue'
+import BlogAllComponent from '@/components/blog/BlogAllComponent.vue'
 
 export default {
   name: 'App',
+  components: { BlogAllComponent, FooterComponent, HeaderComponent },
   store,
-  methods: {
-    chooseElement (nameElement) {
-      if (nameElement === 'Home') {
-        this.activeElem = 'TopBannerComponent'
-      } else if (nameElement === 'Project') {
-        this.activeElem = 'TopComponent'
-      } else if (nameElement === 'Blog') {
-        this.activeElem = 'BlogListComponent'
-      }
-      console.log(`app ${nameElement}`)
-    }
-  },
   data () {
     return {
       imgBanner: 'img/banner-blog.jpg',
-      activeElem: 'TopComponent'
+      activeElem: 'TopComponent',
+      blog:
+        {
+          id: 1,
+          header: '#1 Let’s Get Solution for Building Construction Work',
+          img: 'img/blog-1.png',
+          date: '26 December,2022',
+          crumbs: 'Interior / Home / Decore',
+          text: 'Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae turpmaximus.posuere in.Contrary to popular belief.There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injecthumour, or randomised words which don\'t look even slightly believable.\n' +
+            '\n' +
+            'Embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary.',
+          tags: ['Bedroom', 'Architecture', 'Kitchen Planning'],
+          detailsHeader: '#1 Design sprints are great',
+          detailsText: 'Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae turpmaximus.posuere in.Contrary to popular belief.There are many variations of passages of Lorem Ipsum available, but the majority have suffered.\n\n' +
+            '1. Contrary to popular belief.There are many variations of passages of Lorem Ipsum available, but the majority have suffered.\n' +
+            '\n' +
+            '2. Contrary to popular belief.There are many variations of passages of Lorem Ipsum available, but the majority have suffered.\n' +
+            '3. Contrary to popular belief.There are many variations of passages of Lorem Ipsum available, but the majority have suffered.\n',
+          detailsImg: 'img/details-sub.png',
+          detailsSubText: 'Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae turpmaximus.posuere in.Contrary to popular belief.There are many variations of passages of Lorem Ipsum available, but the majority have suffered.'
+        }
     }
-  },
-  components: {
-    // TestStateComponent
-    // ProductDetails,
-    // FooterComponent,
-    // TopBannerComponent,
-    // HeaderComponent,
-    // TopComponent,
-    // BlogListComponent
   }
 }
 </script>
@@ -83,10 +69,11 @@ export default {
   padding-right: calc(50% - 600px);
 }
 
-.products {
+.wrapper-art {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
-  gap: 10px;
+  //gap: 10px;
   margin: 50px 0;
 }
 </style>

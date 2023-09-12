@@ -3,6 +3,10 @@
     <div class="banner-content">
       <div class="banner-content-img-wrapper">
         <img class="banner-content-img" :src=imgBanner alt="" srcset="">
+        <div v-if="textLabel" class="banner-content-label">
+          <div class="banner-content-label__header">{{ textLabel }}</div>
+          <div class="banner-content-label__crumbs">{{ crumbs }}</div>
+        </div>
       </div>
     </div>
   </div>
@@ -11,7 +15,7 @@
 <script>
 export default {
   name: 'TopBannerComponent',
-  props: ['imgBanner']
+  props: ['imgBanner', 'textLabel', 'crumbs']
 }
 </script>
 

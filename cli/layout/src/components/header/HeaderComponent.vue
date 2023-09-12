@@ -53,9 +53,8 @@ export default {
 <style scoped lang="scss">
 
 .header {
-
+  margin: 53px 0;
   &-content {
-    margin-top: 53px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;

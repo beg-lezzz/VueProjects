@@ -1,5 +1,5 @@
 <template>
-  <div class="menu" :class="{ column: isColumn }">
+  <div class="menu" :class="{ column: isColumn, row: !isColumn }">
     <div v-if="this.header" class="menu-header">
       <p class="menu-header__text">
         {{ this.header }}
@@ -26,15 +26,19 @@ export default {
 <style scoped lang="scss">
 .column {
   flex-direction: column;
+  align-items: flex-start;
+}
+
+.row {
+  flex-direction: row;
+  align-items: center;
 }
 
 .menu {
   display: flex;
-  align-items: flex-start;
   gap: 30px;
 
   &__element {
-
   }
   &__text {
     color: #292F36;
