@@ -1,8 +1,8 @@
 <template>
   <div id="app">
     <header-component />
-    <BlogAllComponent />
-<!--    <router-view />-->
+<!--    <BlogAllComponent />-->
+    <router-view />
     <footer-component />
   </div>
 </template>
@@ -12,11 +12,10 @@
 import store from '@/store'
 import HeaderComponent from '@/components/header/HeaderComponent.vue'
 import FooterComponent from '@/components/FooterComponent.vue'
-import BlogAllComponent from '@/components/blog/BlogAllComponent.vue'
 
 export default {
   name: 'App',
-  components: { BlogAllComponent, FooterComponent, HeaderComponent },
+  components: { FooterComponent, HeaderComponent },
   store,
   data () {
     return {

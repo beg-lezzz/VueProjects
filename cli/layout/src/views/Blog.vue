@@ -1,13 +1,14 @@
 <template>
-  <div class="wrapper">
-    <TopBannerComponent :imgBanner="imgBanner" :textLabel="textLabel" :crumbs="crumbs" />
-    <BlogListComponent />
-  </div>
+<!--  <div class="wrapper">-->
+<!--    <TopBannerComponent :imgBanner="imgBanner" :textLabel="textLabel" :crumbs="crumbs" />-->
+<!--    <BlogListComponent />-->
+<!--  </div>-->
+  <router-view />
 </template>
 
 <script>
-import BlogListComponent from '@/components/blog/BlogListComponent.vue'
-import TopBannerComponent from '@/components/TopBannerComponent.vue'
+// import BlogListComponent from '@/components/blog/BlogListComponent.vue'
+// import TopBannerComponent from '@/components/TopBannerComponent.vue'
 
 export default {
   name: 'Home',
@@ -18,8 +19,8 @@ export default {
       crumbs: 'Home / Blog',
       tags: ['Bathroom', 'Bed Room', 'Kitchan', 'Living Area']
     }
-  },
-  components: { TopBannerComponent, BlogListComponent }
+  }
+  // components: { TopBannerComponent, BlogListComponent }
 }
 </script>
 

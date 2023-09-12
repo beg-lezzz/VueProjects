@@ -23,10 +23,12 @@
             {{ article.date }}
           </div>
           <div class="footer__button">
+            <router-link :to="{ name: 'article', params: { id: article.id }}">
             <svg xmlns="http://www.w3.org/2000/svg" width="53" height="53" viewBox="0 0 53 53" fill="none">
               <circle cx="26.5" cy="26.2671" r="26" fill="#F4F0EC"/>
               <path d="M24.271 32.9526L30.2139 26.2669L24.271 19.5812" stroke="#292F36" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
+            </router-link>
           </div>
         </div>
       </div>
