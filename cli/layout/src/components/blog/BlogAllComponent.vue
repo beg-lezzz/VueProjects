@@ -16,11 +16,22 @@
           </p>
         </div>
         <div class="articles-content-cards">
-          <ArticleComponent v-for="(article, idx) in curArray" :key="idx" :article="article" :direction="directionArticle" />
+          <ArticleComponent
+            v-for="(article, idx) in curArray"
+            :key="idx"
+            :article="article"
+            :direction="directionArticle" />
         </div>
       </div>
       <div class="pagination">
-        <div class="pagination-element" @click="clickPagination(i)" v-for="i in getPaginationLen + 1" :key="i.id" :class="{ black: i === currentPage }">{{ `${i === getPaginationLen + 1 ? '>' : i}` }}</div>
+        <div class="pagination-element"
+             @click="clickPagination(i)"
+             v-for="i in getPaginationLen + 1"
+             :key="i.id"
+             :class="{ black: i === currentPage, arrow: i === getPaginationLen + 1 }"
+        >
+          {{ `${i === getPaginationLen + 1 ? '' : i}` }}
+        </div>
       </div>
     </div>
   </div>
@@ -563,11 +574,11 @@ export default {
 .pagination {
   display: flex;
   justify-content: center;
-  gap: 5px;
+  gap: 20px;
   padding: 25px 0;
   &-element {
     cursor: pointer;
-    border: 1px solid #292F36;
+    border: 1px solid #CDA274;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -577,7 +588,11 @@ export default {
   }
 }
 .black {
-  background: #292F36;
-  color: #E7E7E7;
+  background: #F4F0EC;
+  border-color: #F4F0EC;
+}
+.arrow {
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='53' height='52' viewBox='0 0 53 52' fill='none'%3e%3cpath d='M23.5571 32L29.5 25.3143L23.5571 18.6286' stroke='%23292F36' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3e%3c/svg%3e");
+  background-size:100% 100%;
 }
 </style>
