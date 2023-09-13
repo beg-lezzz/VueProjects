@@ -5,6 +5,7 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
+    testState: [],
     allArticles: [
       {
         id: 1,
@@ -619,6 +620,168 @@ export default new Vuex.Store({
         name: 'Blog',
         href: '/blog'
       }
+    ],
+    projects: [
+      {
+        id: 1,
+        header: 'Minimal Bedroom',
+        crumbs: 'Decor / Artchitecture',
+        imgProject: 'img/project-1.png',
+        images: [
+          {
+            id: 1,
+            src: 'img/project-1-1.png'
+          },
+          {
+            id: 2,
+            src: 'img/project-1-2.png'
+          },
+          {
+            id: 3,
+            src: 'img/project-1-3.png'
+          }
+        ]
+      },
+      {
+        id: 2,
+        header: 'Classic Minimal Bedroom',
+        crumbs: 'Decor / Artchitecture',
+        imgProject: 'img/project-3.png',
+        images: [
+          {
+            id: 1,
+            src: 'img/project-1-1.png'
+          },
+          {
+            id: 2,
+            src: 'img/project-1-2.png'
+          },
+          {
+            id: 3,
+            src: 'img/project-1-3.png'
+          }
+        ]
+      },
+      {
+        id: 3,
+        header: 'Minimal Bedroom table',
+        crumbs: 'Decor / Artchitecture',
+        imgProject: 'img/project-5.png',
+        images: [
+          {
+            id: 1,
+            src: 'img/project-1-1.png'
+          },
+          {
+            id: 2,
+            src: 'img/project-1-2.png'
+          },
+          {
+            id: 3,
+            src: 'img/project-1-3.png'
+          }
+        ]
+      },
+      {
+        id: 4,
+        header: 'Modern Medroom',
+        crumbs: 'Decor / Artchitecture',
+        imgProject: 'img/project-7.png',
+        images: [
+          {
+            id: 1,
+            src: 'img/project-1-1.png'
+          },
+          {
+            id: 2,
+            src: 'img/project-1-2.png'
+          },
+          {
+            id: 3,
+            src: 'img/project-1-3.png'
+          }
+        ]
+      },
+      {
+        id: 5,
+        header: 'Minimal Bedroom',
+        crumbs: 'Decor / Artchitecture',
+        imgProject: 'img/project-2.png',
+        images: [
+          {
+            id: 1,
+            src: 'img/project-1-1.png'
+          },
+          {
+            id: 2,
+            src: 'img/project-1-2.png'
+          },
+          {
+            id: 3,
+            src: 'img/project-1-3.png'
+          }
+        ]
+      },
+      {
+        id: 6,
+        header: 'Modern Bedroom',
+        crumbs: 'Decor / Artchitecture',
+        imgProject: 'img/project-4.png',
+        images: [
+          {
+            id: 1,
+            src: 'img/project-1-1.png'
+          },
+          {
+            id: 2,
+            src: 'img/project-1-2.png'
+          },
+          {
+            id: 3,
+            src: 'img/project-1-3.png'
+          }
+        ]
+      },
+      {
+        id: 7,
+        header: 'System Table',
+        crumbs: 'Decor / Artchitecture',
+        imgProject: 'img/project-6.png',
+        images: [
+          {
+            id: 1,
+            src: 'img/project-1-1.png'
+          },
+          {
+            id: 2,
+            src: 'img/project-1-2.png'
+          },
+          {
+            id: 3,
+            src: 'img/project-1-3.png'
+          }
+        ]
+      },
+      {
+        id: 8,
+        header: 'Modern Bedroom',
+        crumbs: 'Decor / Artchitecture',
+        imgProject: 'img/project-8.png',
+        images: [
+          {
+            id: 1,
+            src: 'img/project-1-1.png'
+          },
+          {
+            id: 2,
+            src: 'img/project-1-2.png'
+          },
+          {
+            id: 3,
+            src: 'img/project-1-3.png'
+          }
+        ]
+      }
     ]
   },
   getters: {
@@ -639,6 +802,12 @@ export default new Vuex.Store({
     },
     getArticleById: (state) => (id) => {
       return state.allArticles.find(article => article.id === Number(id))
+    },
+    getProjects: state => {
+      return state.projects
+    },
+    getProjectById: (state) => (id) => {
+      return state.projects.find(project => project.id === Number(id))
     }
   },
   mutations: {

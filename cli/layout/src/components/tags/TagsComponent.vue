@@ -92,6 +92,6 @@ export default {
   align-items: flex-start;
   flex-wrap: wrap;
   align-content: flex-start;
-  margin: 30px;
+  margin-bottom: 30px;
 }
 </style>

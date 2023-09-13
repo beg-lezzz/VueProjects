@@ -41,10 +41,11 @@
 <script>
 import ArticleComponent from '@/components/blog/ArticleComponent.vue'
 import { mapGetters } from 'vuex'
+import TopBannerComponent from "@/components/banner/TopBannerComponent.vue";
 
 export default {
   name: 'BlogComponent',
-  components: { ArticleComponent },
+  components: {TopBannerComponent, ArticleComponent },
   data () {
     return {
       articles: [],

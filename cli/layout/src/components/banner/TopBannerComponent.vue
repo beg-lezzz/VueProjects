@@ -21,6 +21,7 @@ export default {
 
 <style scoped lang="scss">
 .banner {
+  margin-bottom: 200px;
 
   &-content {
     position: relative;

@@ -6,63 +6,21 @@
 
 <script>
 import ProjectComponent from '@/components/projects/ProjectComponent.vue'
+import { mapGetters } from 'vuex'
 
 export default {
   name: 'ProjectsListComponent',
   components: { ProjectComponent },
   data () {
     return {
-      projects: [
-        {
-          id: 1,
-          header: 'Minimal Bedroom',
-          crumbs: 'Decor / Artchitecture',
-          imgProject: 'img/project-1.png'
-        },
-        {
-          id: 1,
-          header: 'Classic Minimal Bedroom',
-          crumbs: 'Decor / Artchitecture',
-          imgProject: 'img/project-3.png'
-        },
-        {
-          id: 1,
-          header: 'Minimal Bedroom table',
-          crumbs: 'Decor / Artchitecture',
-          imgProject: 'img/project-5.png'
-        },
-        {
-          id: 1,
-          header: 'Modern Medroom',
-          crumbs: 'Decor / Artchitecture',
-          imgProject: 'img/project-7.png'
-        },
-        {
-          id: 1,
-          header: 'Minimal Bedroom',
-          crumbs: 'Decor / Artchitecture',
-          imgProject: 'img/project-2.png'
-        },
-        {
-          id: 1,
-          header: 'Modern Bedroom',
-          crumbs: 'Decor / Artchitecture',
-          imgProject: 'img/project-4.png'
-        },
-        {
-          id: 1,
-          header: 'System Table',
-          crumbs: 'Decor / Artchitecture',
-          imgProject: 'img/project-6.png'
-        },
-        {
-          id: 1,
-          header: 'Modern Bedroom',
-          crumbs: 'Decor / Artchitecture',
-          imgProject: 'img/project-8.png'
-        }
-      ]
+      projects: []
     }
+  },
+  computed: {
+    ...mapGetters(['getProjects'])
+  },
+  mounted () {
+    this.projects = this.getProjects
   }
 }
 </script>
