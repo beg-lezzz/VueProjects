@@ -1,13 +1,11 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '@/views/Home.vue'
-// import Blog from '@/views/Blog.vue'
 import OurProjects from '@/views/OurProjects.vue'
 import Page404 from '@/views/Page404.vue'
-import BlogAllComponent from '@/components/blog/BlogAllComponent.vue'
-import Articles from '@/components/Articles.vue'
-import TestRouterChild from '@/views/TestRouterChild.vue'
 import Blog from '@/views/Blog.vue'
+import BlogComponent from '@/components/blog/BlogComponent.vue'
+import BlogDetailsComponent from '@/components/blog/BlogDetailsComponent.vue'
 
 Vue.use(VueRouter)
 
@@ -19,17 +17,17 @@ const routes = [
   },
   {
     path: '/blog',
-    name: 'blog',
     component: Blog,
     children: [
       {
         path: 'article/:id',
         name: 'article',
-        component: TestRouterChild
+        component: BlogDetailsComponent
       },
       {
         path: '',
-        component: BlogAllComponent
+        name: 'blog',
+        component: BlogComponent
       }
     ]
   },
@@ -39,21 +37,6 @@ const routes = [
     component: OurProjects
   },
   {
-    path: '/test',
-    name: 'test',
-    component: TestRouterChild,
-    children: [
-      {
-        path: 'blog',
-        component: Articles
-      },
-      {
-        path: '',
-        component: BlogAllComponent
-      }
-    ]
-  },
-  {
     path: '*',
     name: 'notfound',
     component: Page404
@@ -61,6 +44,10 @@ const routes = [
 ]
 
 const router = new VueRouter({
+  // mode: 'history',
+  scrollBehavior (to, from, savedPosition) {
+    return { x: 0, y: 0 }
+  },
   routes
 })
 

@@ -1,7 +1,7 @@
 <template>
   <div class="wrapper center">
     <ArticleComponent
-      :article="$store.state.testArticles[$route.params.id - 1]"
+      :article="article"
       :direction="directionLast" />
 <!--    {{ $store.state.testArticles[$route.params.id] }}-->
   </div>
@@ -15,8 +15,12 @@ export default {
   components: { ArticleComponent },
   data () {
     return {
-      directionLast: 'row'
+      directionLast: 'row',
+      article: {}
     }
+  },
+  mounted () {
+    this.article = this.$store.state.testArticles[this.$route.params.id - 1]
   }
 }
 </script>

@@ -1,7 +1,6 @@
 <template>
   <div id="app">
     <header-component />
-<!--    <BlogAllComponent />-->
     <router-view />
     <footer-component />
   </div>
@@ -20,27 +19,7 @@ export default {
   data () {
     return {
       imgBanner: 'img/banner-blog.jpg',
-      activeElem: 'TopComponent',
-      blog:
-        {
-          id: 1,
-          header: '#1 Let’s Get Solution for Building Construction Work',
-          img: 'img/blog-1.png',
-          date: '26 December,2022',
-          crumbs: 'Interior / Home / Decore',
-          text: 'Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae turpmaximus.posuere in.Contrary to popular belief.There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injecthumour, or randomised words which don\'t look even slightly believable.\n' +
-            '\n' +
-            'Embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary.',
-          tags: ['Bedroom', 'Architecture', 'Kitchen Planning'],
-          detailsHeader: '#1 Design sprints are great',
-          detailsText: 'Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae turpmaximus.posuere in.Contrary to popular belief.There are many variations of passages of Lorem Ipsum available, but the majority have suffered.\n\n' +
-            '1. Contrary to popular belief.There are many variations of passages of Lorem Ipsum available, but the majority have suffered.\n' +
-            '\n' +
-            '2. Contrary to popular belief.There are many variations of passages of Lorem Ipsum available, but the majority have suffered.\n' +
-            '3. Contrary to popular belief.There are many variations of passages of Lorem Ipsum available, but the majority have suffered.\n',
-          detailsImg: 'img/details-sub.png',
-          detailsSubText: 'Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae turpmaximus.posuere in.Contrary to popular belief.There are many variations of passages of Lorem Ipsum available, but the majority have suffered.'
-        }
+      activeElem: 'TopComponent'
     }
   }
 }

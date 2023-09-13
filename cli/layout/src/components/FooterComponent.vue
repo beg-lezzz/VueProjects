@@ -2,16 +2,6 @@
   <div class="footer center">
     <div class="footer-content">
       <div class="footer-content-company">
-<!--        <div class="footer-logo">-->
-<!--          <a href="#"><svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">-->
-<!--            <path d="M0 34.0003H13.4588V24.499C13.4588 22.4853 15.0898 20.8543 17.1035 20.8543C19.1172 20.8543 20.7482 22.4853 20.7482 24.499V34.0003H33.9975V0C15.2211 0 0 15.2211 0 34.0003Z" fill="#CDA274"/>-->
-<!--          </svg></a>-->
-<!--          <a href="#">-->
-<!--            <p class="footer-logo__text">-->
-<!--              Interno-->
-<!--            </p>-->
-<!--          </a>-->
-<!--        </div>-->
         <logo-component :logo="logo" />
         <div class="footer-content-company-info">
           <p class="footer-content-company-info__text">
@@ -31,18 +21,6 @@
           </div>
         </div>
       </div>
-<!--      <div class="footer-content-pages">-->
-<!--        <div class="footer-content-pages-wrapper">-->
-<!--          <p class="footer-content-pages__header">-->
-<!--            Pages-->
-<!--          </p>-->
-<!--          <ul class="footer-content-pages__ul">-->
-<!--            <li class="footer-content-pages__li">Home</li>-->
-<!--            <li class="footer-content-pages__li">Project</li>-->
-<!--            <li class="footer-content-pages__li">Blog</li>-->
-<!--          </ul>-->
-<!--        </div>-->
-<!--      </div>-->
       <MenuComponent @MenuElement="chooseElement" :menu="menu" :direction="direction" :header="header"/>
       <div class="footer-content-contacts">
         <p class="footer-content-contacts__header">Contact</p>
@@ -67,7 +45,7 @@ export default {
       menu: [
         {
           name: 'Home',
-          href: '/home'
+          href: '/'
         },
         {
           name: 'Project',

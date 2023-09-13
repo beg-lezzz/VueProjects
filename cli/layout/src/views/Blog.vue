@@ -7,7 +7,7 @@
 </template>
 
 <script>
-// import BlogListComponent from '@/components/blog/BlogListComponent.vue'
+// import BlogListComponent from '@/components/blog/BlogDetailsComponent.vue'
 // import TopBannerComponent from '@/components/TopBannerComponent.vue'
 
 export default {
