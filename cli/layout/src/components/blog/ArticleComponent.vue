@@ -8,7 +8,7 @@
     <div class="content" :class="{ content__column: !isRow && !details, content__row: isRow, content__details: details }">
       <div class="imgwrapper" :class="{ imgwrapper__row: isRow }">
         <img class="img" :class="{ img__row: isRow, img__details: details }" :src="article.img" alt="article-img">
-        <div class="badge" v-if="!isRow">
+        <div class="badge" v-if="!isRow && !details">
           <p class="badge__text">
             {{ article.badge }}
           </p>

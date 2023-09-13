@@ -7,9 +7,9 @@
 </template>
 
 <script>
-import TopBannerComponent from '@/components/TopBannerComponent.vue'
-import TagsComponent from '@/components/TagsComponent.vue'
-import ProjectsListComponent from '@/components/ProjectsListComponent.vue'
+import TopBannerComponent from '@/components/banner/TopBannerComponent.vue'
+import TagsComponent from '@/components/tags/TagsComponent.vue'
+import ProjectsListComponent from '@/components/projects/ProjectsListComponent.vue'
 
 export default {
   name: 'OurProjects',

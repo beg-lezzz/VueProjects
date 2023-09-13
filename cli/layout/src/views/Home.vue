@@ -3,15 +3,15 @@
     <top-component />
     <follow-project />
     <counter-achievements />
-    <articles />
+    <Articles />
   </div>
 </template>
 
 <script>
-import TopComponent from '@/components/TopComponent.vue'
-import FollowProject from '@/components/FollowProject.vue'
-import CounterAchievements from '@/components/CounterAchievements.vue'
-import Articles from '@/components/Articles.vue'
+import TopComponent from '@/components/banner/TopComponent.vue'
+import FollowProject from '@/components/homePageElements/FollowProject.vue'
+import CounterAchievements from '@/components/homePageElements/CounterAchievements.vue'
+import Articles from '@/components/homePageElements/Articles.vue'
 
 export default {
   name: 'Home',

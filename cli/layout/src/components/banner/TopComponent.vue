@@ -29,7 +29,7 @@ export default {
 .top {
   &-content {
     margin-top: 53px;
-    background: url(img/top-background.jpg), lightgray 50% / cover no-repeat;
+    background: url(../img/top-background.jpg), lightgray 50% / cover no-repeat;
     border-radius: 60px;
     padding-top: 208px;
     padding-bottom: 208px;

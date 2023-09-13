@@ -605,9 +605,26 @@ export default new Vuex.Store({
         detailsImg: 'img/details-sub.png',
         detailsSubText: 'Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae turpmaximus.posuere in.Contrary to popular belief.There are many variations of passages of Lorem Ipsum available, but the majority have suffered.'
       }
+    ],
+    mainMenu: [
+      {
+        name: 'Home',
+        href: '/'
+      },
+      {
+        name: 'Project',
+        href: '/project'
+      },
+      {
+        name: 'Blog',
+        href: '/blog'
+      }
     ]
   },
   getters: {
+    getMainMenu: state => {
+      return state.mainMenu
+    },
     getAllArticles: state => {
       return state.allArticles
     },

@@ -10,7 +10,7 @@
 
 import store from '@/store'
 import HeaderComponent from '@/components/header/HeaderComponent.vue'
-import FooterComponent from '@/components/FooterComponent.vue'
+import FooterComponent from '@/components/footer/FooterComponent.vue'
 
 export default {
   name: 'App',

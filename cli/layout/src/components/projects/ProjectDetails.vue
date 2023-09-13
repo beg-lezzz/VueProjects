@@ -23,9 +23,9 @@
 
 <script>
 import HeaderComponent from '@/components/header/HeaderComponent.vue'
-import TopBannerComponent from '@/components/TopBannerComponent.vue'
-import SliderComponent from '@/components/SliderComponent.vue'
-import FooterComponent from '@/components/FooterComponent.vue'
+import TopBannerComponent from '@/components/banner/TopBannerComponent.vue'
+import SliderComponent from '@/components/slider/SliderComponent.vue'
+import FooterComponent from '@/components/footer/FooterComponent.vue'
 
 export default {
   name: 'ProjectDetails',

@@ -45,7 +45,7 @@ export default {
 
     &:not(:last-child)::before {
       position: absolute;
-      content: url("img/Line.jpg");
+      content: url("../img/Line.jpg");
       top: 4px;
       right: 0;
     }

@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import MenuComponent from '@/components/header/MenuComponent.vue'
+import MenuComponent from '@/components/menu/MenuComponent.vue'
 import LogoComponent from '@/components/header/LogoComponent.vue'
 export default {
   name: 'HeaderComponent',

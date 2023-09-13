@@ -33,8 +33,9 @@
 </template>
 
 <script>
-import MenuComponent from '@/components/header/MenuComponent.vue'
+import MenuComponent from '@/components/menu/MenuComponent.vue'
 import LogoComponent from '@/components/header/LogoComponent.vue'
+import { mapGetters } from 'vuex'
 
 export default {
   name: 'FooterComponent',
@@ -42,20 +43,7 @@ export default {
     return {
       direction: 'column',
       header: 'Pages',
-      menu: [
-        {
-          name: 'Home',
-          href: '/'
-        },
-        {
-          name: 'Project',
-          href: '/project'
-        },
-        {
-          name: 'Blog',
-          href: '/blog'
-        }
-      ],
+      menu: [],
       logo: {
         header: 'Interno',
         href: '#',
@@ -70,7 +58,13 @@ export default {
       console.log(`header ${nameMenu}`)
     }
   },
-  components: { LogoComponent, MenuComponent }
+  computed: {
+    ...mapGetters(['getMainMenu'])
+  },
+  components: { LogoComponent, MenuComponent },
+  mounted () {
+    this.menu = this.getMainMenu
+  }
 }
 </script>
 

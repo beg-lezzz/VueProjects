@@ -13,7 +13,7 @@
       <div class="projects-cards">
         <div class="projects-card">
           <div class="projects-card-image-wrapper">
-            <img class="projects-card-image projects-card__radius_top-right" src="img/card-1.png" alt="" srcset="">
+            <img class="projects-card-image projects-card__radius_top-right" src="../img/card-1.png" alt="" srcset="">
           </div>
           <div class="projects-card-description">
             <div class="project-card-description__info">
@@ -36,7 +36,7 @@
         </div>
         <div class="projects-card">
           <div class="projects-card-image-wrapper">
-            <img class="projects-card-image projects-card__radius_top-left" src="img/card-2.png" alt="" srcset="">
+            <img class="projects-card-image projects-card__radius_top-left" src="../img/card-2.png" alt="" srcset="">
           </div>
           <div class="projects-card-description">
             <div class="project-card-description__info">
@@ -59,7 +59,7 @@
         </div>
         <div class="projects-card">
           <div class="projects-card-image-wrapper">
-            <img class="projects-card-image projects-card__radius_bottom-right" src="img/card-3.png" alt="" srcset="">
+            <img class="projects-card-image projects-card__radius_bottom-right" src="../img/card-3.png" alt="" srcset="">
           </div>
           <div class="projects-card-description">
             <div class="project-card-description__info">
@@ -82,7 +82,7 @@
         </div>
         <div class="projects-card">
           <div class="projects-card-image-wrapper">
-            <img class="projects-card-image projects-card__radius_bottom-left" src="img/card-4.png" alt="" srcset="">
+            <img class="projects-card-image projects-card__radius_bottom-left" src="../img/card-4.png" alt="" srcset="">
           </div>
           <div class="projects-card-description">
             <div class="project-card-description__info">
