@@ -1,11 +1,14 @@
 <template>
-  <div class="blogs-list center">
-    <div class="blogs-list-content">
-      <div class="blogs-container">
-        <ArticleComponent :article="article" :direction="direction" :details="details"/>
-      </div>
-      <div class="tags-container">
-        <div class="tag" :class="{'tag-clicked': tag === filterItem}" v-for="tag in getTags" :key="tag.id" @click="clickTag(tag)">{{ tag }}</div>
+  <div class="wrapper">
+    <TopBannerComponent :imgBanner="imgBanner" />
+    <div class="blogs-list center">
+      <div class="blogs-list-content">
+        <div class="blogs-container">
+          <ArticleComponent :article="article" :direction="direction" :details="details"/>
+        </div>
+        <div class="tags-container">
+          <div class="tag" :class="{'tag-clicked': tag === filterItem}" v-for="tag in getTags" :key="tag.id" @click="clickTag(tag)">{{ tag }}</div>
+        </div>
       </div>
     </div>
   </div>
@@ -14,10 +17,12 @@
 <script>
 import ArticleComponent from '@/components/blog/ArticleComponent.vue'
 import { mapGetters } from 'vuex'
+import TopBannerComponent from '@/components/banner/TopBannerComponent.vue'
 
 export default {
   name: 'BlogDetailsComponent',
   components: {
+    TopBannerComponent,
     ArticleComponent
   },
   data () {
@@ -27,7 +32,9 @@ export default {
       filterId: '',
       showDetails: false,
       direction: 'column',
-      details: true
+      details: true,
+      imgBanner: 'img/banner-blog.jpg',
+      textLabel: ''
     }
   },
   computed: {

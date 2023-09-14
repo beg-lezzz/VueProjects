@@ -1,11 +1,13 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '@/views/Home.vue'
+import HomePage from '@/views/HomePage.vue'
 import OurProjects from '@/views/OurProjects.vue'
-import Page404 from '@/views/Page404.vue'
-import Blog from '@/views/Blog.vue'
+import BlogPage from '@/views/BlogPage.vue'
 import BlogComponent from '@/components/blog/BlogComponent.vue'
 import BlogDetailsComponent from '@/components/blog/BlogDetailsComponent.vue'
+import ProjectsListComponent from '@/components/projects/ProjectsListComponent.vue'
+import ProjectDetails from '@/components/projects/ProjectDetails.vue'
+import PageNotFound from '@/views/PageNotFound.vue'
 
 Vue.use(VueRouter)
 
@@ -13,33 +15,44 @@ const routes = [
   {
     path: '/',
     name: 'home',
-    component: Home
+    component: HomePage
   },
   {
     path: '/blog',
-    component: Blog,
+    component: BlogPage,
     children: [
       {
         path: '',
-        name: 'blog',
+        name: 'blogs',
         component: BlogComponent
       },
       {
-        path: 'article/:id',
-        name: 'article',
+        path: 'blog/:id',
+        name: 'blog',
         component: BlogDetailsComponent
       }
     ]
   },
   {
     path: '/project',
-    name: 'project',
-    component: OurProjects
+    component: OurProjects,
+    children: [
+      {
+        path: '',
+        name: 'projects',
+        component: ProjectsListComponent
+      },
+      {
+        path: 'project/:id',
+        name: 'project',
+        component: ProjectDetails
+      }
+    ]
   },
   {
     path: '*',
     name: 'notfound',
-    component: Page404
+    component: PageNotFound
   }
 ]
 

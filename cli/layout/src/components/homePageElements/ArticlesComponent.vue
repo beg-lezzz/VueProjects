@@ -26,7 +26,7 @@ import ArticleComponent from '@/components/blog/ArticleComponent.vue'
 import { mapGetters } from 'vuex'
 
 export default {
-  name: 'Articles',
+  name: 'ArticlesComponent',
   data () {
     return {
       articles: [],

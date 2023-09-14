@@ -1,9 +1,9 @@
 <template>
   <div class="header-logo">
-    <router-link :to="logo.href">
+    <router-link :to="{name: 'home'}">
       <img src="../img/logo.jpg" alt="logo">
     </router-link>
-    <router-link :to="logo.href">
+    <router-link :to="{name: 'home'}">
       <p class="header-logo__text">
         {{ logo.header }}
       </p>

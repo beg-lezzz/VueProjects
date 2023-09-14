@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import { Set } from 'core-js/internals/set-helpers'
 
 Vue.use(Vuex)
 
@@ -627,6 +628,17 @@ export default new Vuex.Store({
         header: 'Minimal Bedroom',
         crumbs: 'Decor / Artchitecture',
         imgProject: 'img/project-1.png',
+        tags: ['Bathroom', 'Bed Room', 'Kitchan', 'Living Area'],
+        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ' +
+          'Aliquamsem vitae turpis dignissim maximus. Aliquam sollicitudin ' +
+          'tellumassa, vbel maximus purus posuere in. Dojrices gravida dignissim. ' +
+          'Praesent at nibh in mi fringilla mattis. Phasellus ut dolor odio. ' +
+          'Aenean in the ipsum vel lectus bibendum commodo. ' +
+          'In nec sem suscipit, convallis leo vitae, lacinia nibh. ' +
+          'Cras amet tellus lectus. Vivamus ipsum nunc, mattis quis nibh id, ' +
+          'pellentesque arcu. Donec a pellentesque Cras erat enim, gravida non ante vitae,' +
+          'elequis convallis elit, in viverra felis. Donec ultrices tellus vitae iaculisvd porta. ' +
+          'Proin tincidunt ligula id purus porttitor.',
         images: [
           {
             id: 1,
@@ -647,6 +659,17 @@ export default new Vuex.Store({
         header: 'Classic Minimal Bedroom',
         crumbs: 'Decor / Artchitecture',
         imgProject: 'img/project-3.png',
+        tags: ['Bathroom', 'Bed Room', 'Kitchan'],
+        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ' +
+          'Aliquamsem vitae turpis dignissim maximus. Aliquam sollicitudin ' +
+          'tellumassa, vbel maximus purus posuere in. Dojrices gravida dignissim. ' +
+          'Praesent at nibh in mi fringilla mattis. Phasellus ut dolor odio. ' +
+          'Aenean in the ipsum vel lectus bibendum commodo. ' +
+          'In nec sem suscipit, convallis leo vitae, lacinia nibh. ' +
+          'Cras amet tellus lectus. Vivamus ipsum nunc, mattis quis nibh id, ' +
+          'pellentesque arcu. Donec a pellentesque Cras erat enim, gravida non ante vitae,' +
+          'elequis convallis elit, in viverra felis. Donec ultrices tellus vitae iaculisvd porta. ' +
+          'Proin tincidunt ligula id purus porttitor.',
         images: [
           {
             id: 1,
@@ -667,6 +690,17 @@ export default new Vuex.Store({
         header: 'Minimal Bedroom table',
         crumbs: 'Decor / Artchitecture',
         imgProject: 'img/project-5.png',
+        tags: ['Bed Room', 'Kitchan', 'Living Area'],
+        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ' +
+          'Aliquamsem vitae turpis dignissim maximus. Aliquam sollicitudin ' +
+          'tellumassa, vbel maximus purus posuere in. Dojrices gravida dignissim. ' +
+          'Praesent at nibh in mi fringilla mattis. Phasellus ut dolor odio. ' +
+          'Aenean in the ipsum vel lectus bibendum commodo. ' +
+          'In nec sem suscipit, convallis leo vitae, lacinia nibh. ' +
+          'Cras amet tellus lectus. Vivamus ipsum nunc, mattis quis nibh id, ' +
+          'pellentesque arcu. Donec a pellentesque Cras erat enim, gravida non ante vitae,' +
+          'elequis convallis elit, in viverra felis. Donec ultrices tellus vitae iaculisvd porta. ' +
+          'Proin tincidunt ligula id purus porttitor.',
         images: [
           {
             id: 1,
@@ -687,6 +721,17 @@ export default new Vuex.Store({
         header: 'Modern Medroom',
         crumbs: 'Decor / Artchitecture',
         imgProject: 'img/project-7.png',
+        tags: ['Kitchan', 'Living Area'],
+        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ' +
+          'Aliquamsem vitae turpis dignissim maximus. Aliquam sollicitudin ' +
+          'tellumassa, vbel maximus purus posuere in. Dojrices gravida dignissim. ' +
+          'Praesent at nibh in mi fringilla mattis. Phasellus ut dolor odio. ' +
+          'Aenean in the ipsum vel lectus bibendum commodo. ' +
+          'In nec sem suscipit, convallis leo vitae, lacinia nibh. ' +
+          'Cras amet tellus lectus. Vivamus ipsum nunc, mattis quis nibh id, ' +
+          'pellentesque arcu. Donec a pellentesque Cras erat enim, gravida non ante vitae,' +
+          'elequis convallis elit, in viverra felis. Donec ultrices tellus vitae iaculisvd porta. ' +
+          'Proin tincidunt ligula id purus porttitor.',
         images: [
           {
             id: 1,
@@ -707,6 +752,17 @@ export default new Vuex.Store({
         header: 'Minimal Bedroom',
         crumbs: 'Decor / Artchitecture',
         imgProject: 'img/project-2.png',
+        tags: ['Bathroom', 'Bed Room'],
+        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ' +
+          'Aliquamsem vitae turpis dignissim maximus. Aliquam sollicitudin ' +
+          'tellumassa, vbel maximus purus posuere in. Dojrices gravida dignissim. ' +
+          'Praesent at nibh in mi fringilla mattis. Phasellus ut dolor odio. ' +
+          'Aenean in the ipsum vel lectus bibendum commodo. ' +
+          'In nec sem suscipit, convallis leo vitae, lacinia nibh. ' +
+          'Cras amet tellus lectus. Vivamus ipsum nunc, mattis quis nibh id, ' +
+          'pellentesque arcu. Donec a pellentesque Cras erat enim, gravida non ante vitae,' +
+          'elequis convallis elit, in viverra felis. Donec ultrices tellus vitae iaculisvd porta. ' +
+          'Proin tincidunt ligula id purus porttitor.',
         images: [
           {
             id: 1,
@@ -727,6 +783,17 @@ export default new Vuex.Store({
         header: 'Modern Bedroom',
         crumbs: 'Decor / Artchitecture',
         imgProject: 'img/project-4.png',
+        tags: ['Living Area'],
+        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ' +
+          'Aliquamsem vitae turpis dignissim maximus. Aliquam sollicitudin ' +
+          'tellumassa, vbel maximus purus posuere in. Dojrices gravida dignissim. ' +
+          'Praesent at nibh in mi fringilla mattis. Phasellus ut dolor odio. ' +
+          'Aenean in the ipsum vel lectus bibendum commodo. ' +
+          'In nec sem suscipit, convallis leo vitae, lacinia nibh. ' +
+          'Cras amet tellus lectus. Vivamus ipsum nunc, mattis quis nibh id, ' +
+          'pellentesque arcu. Donec a pellentesque Cras erat enim, gravida non ante vitae,' +
+          'elequis convallis elit, in viverra felis. Donec ultrices tellus vitae iaculisvd porta. ' +
+          'Proin tincidunt ligula id purus porttitor.',
         images: [
           {
             id: 1,
@@ -747,6 +814,17 @@ export default new Vuex.Store({
         header: 'System Table',
         crumbs: 'Decor / Artchitecture',
         imgProject: 'img/project-6.png',
+        tags: ['Bathroom'],
+        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ' +
+          'Aliquamsem vitae turpis dignissim maximus. Aliquam sollicitudin ' +
+          'tellumassa, vbel maximus purus posuere in. Dojrices gravida dignissim. ' +
+          'Praesent at nibh in mi fringilla mattis. Phasellus ut dolor odio. ' +
+          'Aenean in the ipsum vel lectus bibendum commodo. ' +
+          'In nec sem suscipit, convallis leo vitae, lacinia nibh. ' +
+          'Cras amet tellus lectus. Vivamus ipsum nunc, mattis quis nibh id, ' +
+          'pellentesque arcu. Donec a pellentesque Cras erat enim, gravida non ante vitae,' +
+          'elequis convallis elit, in viverra felis. Donec ultrices tellus vitae iaculisvd porta. ' +
+          'Proin tincidunt ligula id purus porttitor.',
         images: [
           {
             id: 1,
@@ -767,6 +845,451 @@ export default new Vuex.Store({
         header: 'Modern Bedroom',
         crumbs: 'Decor / Artchitecture',
         imgProject: 'img/project-8.png',
+        tags: ['Bed Room'],
+        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ' +
+          'Aliquamsem vitae turpis dignissim maximus. Aliquam sollicitudin ' +
+          'tellumassa, vbel maximus purus posuere in. Dojrices gravida dignissim. ' +
+          'Praesent at nibh in mi fringilla mattis. Phasellus ut dolor odio. ' +
+          'Aenean in the ipsum vel lectus bibendum commodo. ' +
+          'In nec sem suscipit, convallis leo vitae, lacinia nibh. ' +
+          'Cras amet tellus lectus. Vivamus ipsum nunc, mattis quis nibh id, ' +
+          'pellentesque arcu. Donec a pellentesque Cras erat enim, gravida non ante vitae,' +
+          'elequis convallis elit, in viverra felis. Donec ultrices tellus vitae iaculisvd porta. ' +
+          'Proin tincidunt ligula id purus porttitor.',
+        images: [
+          {
+            id: 1,
+            src: 'img/project-1-1.png'
+          },
+          {
+            id: 2,
+            src: 'img/project-1-2.png'
+          },
+          {
+            id: 3,
+            src: 'img/project-1-3.png'
+          }
+        ]
+      },
+      {
+        id: 9,
+        header: 'Minimal Bedroom',
+        crumbs: 'Decor / Artchitecture',
+        imgProject: 'img/project-1.png',
+        tags: ['Kitchan'],
+        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ' +
+          'Aliquamsem vitae turpis dignissim maximus. Aliquam sollicitudin ' +
+          'tellumassa, vbel maximus purus posuere in. Dojrices gravida dignissim. ' +
+          'Praesent at nibh in mi fringilla mattis. Phasellus ut dolor odio. ' +
+          'Aenean in the ipsum vel lectus bibendum commodo. ' +
+          'In nec sem suscipit, convallis leo vitae, lacinia nibh. ' +
+          'Cras amet tellus lectus. Vivamus ipsum nunc, mattis quis nibh id, ' +
+          'pellentesque arcu. Donec a pellentesque Cras erat enim, gravida non ante vitae,' +
+          'elequis convallis elit, in viverra felis. Donec ultrices tellus vitae iaculisvd porta. ' +
+          'Proin tincidunt ligula id purus porttitor.',
+        images: [
+          {
+            id: 1,
+            src: 'img/project-1-1.png'
+          },
+          {
+            id: 2,
+            src: 'img/project-1-2.png'
+          },
+          {
+            id: 3,
+            src: 'img/project-1-3.png'
+          }
+        ]
+      },
+      {
+        id: 10,
+        header: 'Classic Minimal Bedroom',
+        crumbs: 'Decor / Artchitecture',
+        imgProject: 'img/project-3.png',
+        tags: ['Living Area'],
+        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ' +
+          'Aliquamsem vitae turpis dignissim maximus. Aliquam sollicitudin ' +
+          'tellumassa, vbel maximus purus posuere in. Dojrices gravida dignissim. ' +
+          'Praesent at nibh in mi fringilla mattis. Phasellus ut dolor odio. ' +
+          'Aenean in the ipsum vel lectus bibendum commodo. ' +
+          'In nec sem suscipit, convallis leo vitae, lacinia nibh. ' +
+          'Cras amet tellus lectus. Vivamus ipsum nunc, mattis quis nibh id, ' +
+          'pellentesque arcu. Donec a pellentesque Cras erat enim, gravida non ante vitae,' +
+          'elequis convallis elit, in viverra felis. Donec ultrices tellus vitae iaculisvd porta. ' +
+          'Proin tincidunt ligula id purus porttitor.',
+        images: [
+          {
+            id: 1,
+            src: 'img/project-1-1.png'
+          },
+          {
+            id: 2,
+            src: 'img/project-1-2.png'
+          },
+          {
+            id: 3,
+            src: 'img/project-1-3.png'
+          }
+        ]
+      },
+      {
+        id: 11,
+        header: 'Minimal Bedroom table',
+        crumbs: 'Decor / Artchitecture',
+        imgProject: 'img/project-5.png',
+        tags: ['Bathroom', 'Bed Room', 'Kitchan', 'Living Area'],
+        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ' +
+          'Aliquamsem vitae turpis dignissim maximus. Aliquam sollicitudin ' +
+          'tellumassa, vbel maximus purus posuere in. Dojrices gravida dignissim. ' +
+          'Praesent at nibh in mi fringilla mattis. Phasellus ut dolor odio. ' +
+          'Aenean in the ipsum vel lectus bibendum commodo. ' +
+          'In nec sem suscipit, convallis leo vitae, lacinia nibh. ' +
+          'Cras amet tellus lectus. Vivamus ipsum nunc, mattis quis nibh id, ' +
+          'pellentesque arcu. Donec a pellentesque Cras erat enim, gravida non ante vitae,' +
+          'elequis convallis elit, in viverra felis. Donec ultrices tellus vitae iaculisvd porta. ' +
+          'Proin tincidunt ligula id purus porttitor.',
+        images: [
+          {
+            id: 1,
+            src: 'img/project-1-1.png'
+          },
+          {
+            id: 2,
+            src: 'img/project-1-2.png'
+          },
+          {
+            id: 3,
+            src: 'img/project-1-3.png'
+          }
+        ]
+      },
+      {
+        id: 12,
+        header: 'Modern Medroom',
+        crumbs: 'Decor / Artchitecture',
+        imgProject: 'img/project-7.png',
+        tags: ['Bed Room', 'Kitchan', 'Living Area'],
+        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ' +
+          'Aliquamsem vitae turpis dignissim maximus. Aliquam sollicitudin ' +
+          'tellumassa, vbel maximus purus posuere in. Dojrices gravida dignissim. ' +
+          'Praesent at nibh in mi fringilla mattis. Phasellus ut dolor odio. ' +
+          'Aenean in the ipsum vel lectus bibendum commodo. ' +
+          'In nec sem suscipit, convallis leo vitae, lacinia nibh. ' +
+          'Cras amet tellus lectus. Vivamus ipsum nunc, mattis quis nibh id, ' +
+          'pellentesque arcu. Donec a pellentesque Cras erat enim, gravida non ante vitae,' +
+          'elequis convallis elit, in viverra felis. Donec ultrices tellus vitae iaculisvd porta. ' +
+          'Proin tincidunt ligula id purus porttitor.',
+        images: [
+          {
+            id: 1,
+            src: 'img/project-1-1.png'
+          },
+          {
+            id: 2,
+            src: 'img/project-1-2.png'
+          },
+          {
+            id: 3,
+            src: 'img/project-1-3.png'
+          }
+        ]
+      },
+      {
+        id: 13,
+        header: 'Minimal Bedroom',
+        crumbs: 'Decor / Artchitecture',
+        imgProject: 'img/project-2.png',
+        tags: ['Bathroom', 'Bed Room', 'Kitchan', 'Living Area'],
+        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ' +
+          'Aliquamsem vitae turpis dignissim maximus. Aliquam sollicitudin ' +
+          'tellumassa, vbel maximus purus posuere in. Dojrices gravida dignissim. ' +
+          'Praesent at nibh in mi fringilla mattis. Phasellus ut dolor odio. ' +
+          'Aenean in the ipsum vel lectus bibendum commodo. ' +
+          'In nec sem suscipit, convallis leo vitae, lacinia nibh. ' +
+          'Cras amet tellus lectus. Vivamus ipsum nunc, mattis quis nibh id, ' +
+          'pellentesque arcu. Donec a pellentesque Cras erat enim, gravida non ante vitae,' +
+          'elequis convallis elit, in viverra felis. Donec ultrices tellus vitae iaculisvd porta. ' +
+          'Proin tincidunt ligula id purus porttitor.',
+        images: [
+          {
+            id: 1,
+            src: 'img/project-1-1.png'
+          },
+          {
+            id: 2,
+            src: 'img/project-1-2.png'
+          },
+          {
+            id: 3,
+            src: 'img/project-1-3.png'
+          }
+        ]
+      },
+      {
+        id: 14,
+        header: 'Modern Bedroom',
+        crumbs: 'Decor / Artchitecture',
+        imgProject: 'img/project-4.png',
+        tags: ['Bathroom', 'Living Area'],
+        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ' +
+          'Aliquamsem vitae turpis dignissim maximus. Aliquam sollicitudin ' +
+          'tellumassa, vbel maximus purus posuere in. Dojrices gravida dignissim. ' +
+          'Praesent at nibh in mi fringilla mattis. Phasellus ut dolor odio. ' +
+          'Aenean in the ipsum vel lectus bibendum commodo. ' +
+          'In nec sem suscipit, convallis leo vitae, lacinia nibh. ' +
+          'Cras amet tellus lectus. Vivamus ipsum nunc, mattis quis nibh id, ' +
+          'pellentesque arcu. Donec a pellentesque Cras erat enim, gravida non ante vitae,' +
+          'elequis convallis elit, in viverra felis. Donec ultrices tellus vitae iaculisvd porta. ' +
+          'Proin tincidunt ligula id purus porttitor.',
+        images: [
+          {
+            id: 1,
+            src: 'img/project-1-1.png'
+          },
+          {
+            id: 2,
+            src: 'img/project-1-2.png'
+          },
+          {
+            id: 3,
+            src: 'img/project-1-3.png'
+          }
+        ]
+      },
+      {
+        id: 15,
+        header: 'System Table',
+        crumbs: 'Decor / Artchitecture',
+        imgProject: 'img/project-6.png',
+        tags: ['Bathroom', 'Bed Room'],
+        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ' +
+          'Aliquamsem vitae turpis dignissim maximus. Aliquam sollicitudin ' +
+          'tellumassa, vbel maximus purus posuere in. Dojrices gravida dignissim. ' +
+          'Praesent at nibh in mi fringilla mattis. Phasellus ut dolor odio. ' +
+          'Aenean in the ipsum vel lectus bibendum commodo. ' +
+          'In nec sem suscipit, convallis leo vitae, lacinia nibh. ' +
+          'Cras amet tellus lectus. Vivamus ipsum nunc, mattis quis nibh id, ' +
+          'pellentesque arcu. Donec a pellentesque Cras erat enim, gravida non ante vitae,' +
+          'elequis convallis elit, in viverra felis. Donec ultrices tellus vitae iaculisvd porta. ' +
+          'Proin tincidunt ligula id purus porttitor.',
+        images: [
+          {
+            id: 1,
+            src: 'img/project-1-1.png'
+          },
+          {
+            id: 2,
+            src: 'img/project-1-2.png'
+          },
+          {
+            id: 3,
+            src: 'img/project-1-3.png'
+          }
+        ]
+      },
+      {
+        id: 16,
+        header: 'Modern Bedroom',
+        crumbs: 'Decor / Artchitecture',
+        imgProject: 'img/project-8.png',
+        tags: ['Bathroom', 'Bed Room', 'Kitchan', 'Living Area'],
+        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ' +
+          'Aliquamsem vitae turpis dignissim maximus. Aliquam sollicitudin ' +
+          'tellumassa, vbel maximus purus posuere in. Dojrices gravida dignissim. ' +
+          'Praesent at nibh in mi fringilla mattis. Phasellus ut dolor odio. ' +
+          'Aenean in the ipsum vel lectus bibendum commodo. ' +
+          'In nec sem suscipit, convallis leo vitae, lacinia nibh. ' +
+          'Cras amet tellus lectus. Vivamus ipsum nunc, mattis quis nibh id, ' +
+          'pellentesque arcu. Donec a pellentesque Cras erat enim, gravida non ante vitae,' +
+          'elequis convallis elit, in viverra felis. Donec ultrices tellus vitae iaculisvd porta. ' +
+          'Proin tincidunt ligula id purus porttitor.',
+        images: [
+          {
+            id: 1,
+            src: 'img/project-1-1.png'
+          },
+          {
+            id: 2,
+            src: 'img/project-1-2.png'
+          },
+          {
+            id: 3,
+            src: 'img/project-1-3.png'
+          }
+        ]
+      },
+      {
+        id: 17,
+        header: 'Minimal Bedroom table',
+        crumbs: 'Decor / Artchitecture',
+        imgProject: 'img/project-5.png',
+        tags: ['Bathroom', 'Living Area'],
+        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ' +
+          'Aliquamsem vitae turpis dignissim maximus. Aliquam sollicitudin ' +
+          'tellumassa, vbel maximus purus posuere in. Dojrices gravida dignissim. ' +
+          'Praesent at nibh in mi fringilla mattis. Phasellus ut dolor odio. ' +
+          'Aenean in the ipsum vel lectus bibendum commodo. ' +
+          'In nec sem suscipit, convallis leo vitae, lacinia nibh. ' +
+          'Cras amet tellus lectus. Vivamus ipsum nunc, mattis quis nibh id, ' +
+          'pellentesque arcu. Donec a pellentesque Cras erat enim, gravida non ante vitae,' +
+          'elequis convallis elit, in viverra felis. Donec ultrices tellus vitae iaculisvd porta. ' +
+          'Proin tincidunt ligula id purus porttitor.',
+        images: [
+          {
+            id: 1,
+            src: 'img/project-1-1.png'
+          },
+          {
+            id: 2,
+            src: 'img/project-1-2.png'
+          },
+          {
+            id: 3,
+            src: 'img/project-1-3.png'
+          }
+        ]
+      },
+      {
+        id: 18,
+        header: 'Modern Medroom',
+        crumbs: 'Decor / Artchitecture',
+        imgProject: 'img/project-7.png',
+        tags: ['Bathroom', 'Bed Room'],
+        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ' +
+          'Aliquamsem vitae turpis dignissim maximus. Aliquam sollicitudin ' +
+          'tellumassa, vbel maximus purus posuere in. Dojrices gravida dignissim. ' +
+          'Praesent at nibh in mi fringilla mattis. Phasellus ut dolor odio. ' +
+          'Aenean in the ipsum vel lectus bibendum commodo. ' +
+          'In nec sem suscipit, convallis leo vitae, lacinia nibh. ' +
+          'Cras amet tellus lectus. Vivamus ipsum nunc, mattis quis nibh id, ' +
+          'pellentesque arcu. Donec a pellentesque Cras erat enim, gravida non ante vitae,' +
+          'elequis convallis elit, in viverra felis. Donec ultrices tellus vitae iaculisvd porta. ' +
+          'Proin tincidunt ligula id purus porttitor.',
+        images: [
+          {
+            id: 1,
+            src: 'img/project-1-1.png'
+          },
+          {
+            id: 2,
+            src: 'img/project-1-2.png'
+          },
+          {
+            id: 3,
+            src: 'img/project-1-3.png'
+          }
+        ]
+      },
+      {
+        id: 19,
+        header: 'Minimal Bedroom',
+        crumbs: 'Decor / Artchitecture',
+        imgProject: 'img/project-2.png',
+        tags: ['Bathroom', 'Bed Room', 'Living Area'],
+        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ' +
+          'Aliquamsem vitae turpis dignissim maximus. Aliquam sollicitudin ' +
+          'tellumassa, vbel maximus purus posuere in. Dojrices gravida dignissim. ' +
+          'Praesent at nibh in mi fringilla mattis. Phasellus ut dolor odio. ' +
+          'Aenean in the ipsum vel lectus bibendum commodo. ' +
+          'In nec sem suscipit, convallis leo vitae, lacinia nibh. ' +
+          'Cras amet tellus lectus. Vivamus ipsum nunc, mattis quis nibh id, ' +
+          'pellentesque arcu. Donec a pellentesque Cras erat enim, gravida non ante vitae,' +
+          'elequis convallis elit, in viverra felis. Donec ultrices tellus vitae iaculisvd porta. ' +
+          'Proin tincidunt ligula id purus porttitor.',
+        images: [
+          {
+            id: 1,
+            src: 'img/project-1-1.png'
+          },
+          {
+            id: 2,
+            src: 'img/project-1-2.png'
+          },
+          {
+            id: 3,
+            src: 'img/project-1-3.png'
+          }
+        ]
+      },
+      {
+        id: 20,
+        header: 'Modern Bedroom',
+        crumbs: 'Decor / Artchitecture',
+        imgProject: 'img/project-4.png',
+        tags: ['Bathroom'],
+        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ' +
+          'Aliquamsem vitae turpis dignissim maximus. Aliquam sollicitudin ' +
+          'tellumassa, vbel maximus purus posuere in. Dojrices gravida dignissim. ' +
+          'Praesent at nibh in mi fringilla mattis. Phasellus ut dolor odio. ' +
+          'Aenean in the ipsum vel lectus bibendum commodo. ' +
+          'In nec sem suscipit, convallis leo vitae, lacinia nibh. ' +
+          'Cras amet tellus lectus. Vivamus ipsum nunc, mattis quis nibh id, ' +
+          'pellentesque arcu. Donec a pellentesque Cras erat enim, gravida non ante vitae,' +
+          'elequis convallis elit, in viverra felis. Donec ultrices tellus vitae iaculisvd porta. ' +
+          'Proin tincidunt ligula id purus porttitor.',
+        images: [
+          {
+            id: 1,
+            src: 'img/project-1-1.png'
+          },
+          {
+            id: 2,
+            src: 'img/project-1-2.png'
+          },
+          {
+            id: 3,
+            src: 'img/project-1-3.png'
+          }
+        ]
+      },
+      {
+        id: 21,
+        header: 'System Table',
+        crumbs: 'Decor / Artchitecture',
+        imgProject: 'img/project-6.png',
+        tags: ['Bathroom', 'Kitchan'],
+        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ' +
+          'Aliquamsem vitae turpis dignissim maximus. Aliquam sollicitudin ' +
+          'tellumassa, vbel maximus purus posuere in. Dojrices gravida dignissim. ' +
+          'Praesent at nibh in mi fringilla mattis. Phasellus ut dolor odio. ' +
+          'Aenean in the ipsum vel lectus bibendum commodo. ' +
+          'In nec sem suscipit, convallis leo vitae, lacinia nibh. ' +
+          'Cras amet tellus lectus. Vivamus ipsum nunc, mattis quis nibh id, ' +
+          'pellentesque arcu. Donec a pellentesque Cras erat enim, gravida non ante vitae,' +
+          'elequis convallis elit, in viverra felis. Donec ultrices tellus vitae iaculisvd porta. ' +
+          'Proin tincidunt ligula id purus porttitor.',
+        images: [
+          {
+            id: 1,
+            src: 'img/project-1-1.png'
+          },
+          {
+            id: 2,
+            src: 'img/project-1-2.png'
+          },
+          {
+            id: 3,
+            src: 'img/project-1-3.png'
+          }
+        ]
+      },
+      {
+        id: 22,
+        header: 'Modern Bedroom',
+        crumbs: 'Decor / Artchitecture',
+        imgProject: 'img/project-8.png',
+        tags: ['Bathroom', 'Bed Room', 'Kitchan', 'Living Area'],
+        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ' +
+          'Aliquamsem vitae turpis dignissim maximus. Aliquam sollicitudin ' +
+          'tellumassa, vbel maximus purus posuere in. Dojrices gravida dignissim. ' +
+          'Praesent at nibh in mi fringilla mattis. Phasellus ut dolor odio. ' +
+          'Aenean in the ipsum vel lectus bibendum commodo. ' +
+          'In nec sem suscipit, convallis leo vitae, lacinia nibh. ' +
+          'Cras amet tellus lectus. Vivamus ipsum nunc, mattis quis nibh id, ' +
+          'pellentesque arcu. Donec a pellentesque Cras erat enim, gravida non ante vitae,' +
+          'elequis convallis elit, in viverra felis. Donec ultrices tellus vitae iaculisvd porta. ' +
+          'Proin tincidunt ligula id purus porttitor.',
         images: [
           {
             id: 1,
@@ -806,8 +1329,27 @@ export default new Vuex.Store({
     getProjects: state => {
       return state.projects
     },
+    getFourProjects: state => {
+      return state.projects.slice(0, 4)
+    },
     getProjectById: (state) => (id) => {
       return state.projects.find(project => project.id === Number(id))
+    },
+    getProjectByTag: (state) => (tag) => {
+      return state.projects.filter((project) => {
+        if (tag === '') {
+          return state.projects.slice(0, 6)
+        } else {
+          return project.tags.includes(tag)
+        }
+      })
+    },
+    getProjectsTags: state => {
+      const tags = []
+      state.projects.forEach((el) => {
+        tags.push(...el.tags)
+      })
+      return new Set(tags)
     }
   },
   mutations: {

@@ -5,6 +5,7 @@
         <div class="top-info__head">Let Your Home Be Unique</div>
         <div class="top-info__text">There are many variations of the passages of lorem Ipsum fromavailable, majority.</div>
         <div class="top-info__buttons">
+          <router-link to="/project">
           <button class="button">
             <span class="button__text">
                 Get Started
@@ -13,6 +14,7 @@
               <path d="M2 8.43542L15.7232 8.29857M10.6182 1.91138L17.1412 8.43436L10.4868 15.0887" stroke="#CDA274" stroke-width="2" stroke-linecap="square" stroke-linejoin="round"/>
             </svg>
           </button>
+          </router-link>
         </div>
       </div>
     </div>

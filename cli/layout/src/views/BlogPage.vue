@@ -1,18 +1,15 @@
+/* eslint-disable */
+
 <template>
   <div class="wrapper">
-    <TopBannerComponent :imgBanner="imgBanner" :textLabel="textLabel" :crumbs="crumbs" />
     <router-view />
   </div>
-
 </template>
 
 <script>
 
-import TopBannerComponent from '@/components/banner/TopBannerComponent.vue'
-
 export default {
-  name: 'Home',
-  components: { TopBannerComponent },
+  name: 'BlogPage',
   data () {
     return {
       imgBanner: 'img/our-projects.png',
@@ -21,7 +18,6 @@ export default {
       tags: ['Bathroom', 'Bed Room', 'Kitchan', 'Living Area']
     }
   }
-  // components: { TopBannerComponent, BlogListComponent }
 }
 </script>
 

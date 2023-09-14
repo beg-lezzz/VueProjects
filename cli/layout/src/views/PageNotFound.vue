@@ -22,7 +22,7 @@
 <script>
 
 export default {
-  name: 'Page404',
+  name: 'PageNotFound',
   methods: {
     goToHome () {
       this.$router.push({ name: 'home' })

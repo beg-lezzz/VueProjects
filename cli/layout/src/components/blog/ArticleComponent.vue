@@ -1,5 +1,6 @@
 <template>
   <article class="wrapper" :class="{ wrapper__column: !isRow && !details }">
+    <router-link :to="{ name: 'blog', params: { id: article.id }}" >
     <div class="info" :class="{ info__row: isRow }" v-if="details">
       <p class="top" :class="{ header__row: isRow }">
         {{ article.header }}
@@ -33,12 +34,10 @@
             </p>
           </div>
           <div class="footer__button" v-else>
-            <router-link :to="{ name: 'article', params: { id: article.id }}">
             <svg xmlns="http://www.w3.org/2000/svg" width="53" height="53" viewBox="0 0 53 53" fill="none">
               <circle cx="26.5" cy="26.2671" r="26" fill="#F4F0EC"/>
               <path d="M24.271 32.9526L30.2139 26.2669L24.271 19.5812" stroke="#292F36" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
-            </router-link>
           </div>
         </div>
         <div class="info" :class="{ info__row: isRow }" v-if="details">
@@ -74,6 +73,7 @@
         </p>
       </div>
     </div>
+    </router-link>
   </article>
 </template>
 

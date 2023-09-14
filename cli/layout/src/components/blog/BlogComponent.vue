@@ -1,51 +1,53 @@
 <template>
-  <div class="posts center">
-    <div class="posts-content">
-      <div class="posts-content-wrapper">
-        <div class="posts-content-header">
-          Latest Post
-        </div>
-        <ArticleComponent
-          :article="lastPost"
-          :direction="directionLast" />
-      </div>
-      <div class="posts-content-articles">
-        <div class="posts-content-articles-header">
-          <p class="posts-content-articles-header__text">
-            Articles & News
-          </p>
-        </div>
-        <div class="articles-content-cards">
+  <div class="wrapper">
+    <TopBannerComponent :imgBanner="imgBanner" :textLabel="textLabel" :crumbs="crumbs" />
+    <div class="posts center">
+      <div class="posts-content">
+        <div class="posts-content-wrapper">
+          <div class="posts-content-header">
+            Latest Post
+          </div>
           <ArticleComponent
-            v-for="(article, idx) in curArray"
-            :key="idx"
-            :article="article"
-            :direction="directionArticle" />
+            :article="lastPost"
+            :direction="directionLast" />
         </div>
-      </div>
-      <div class="pagination">
-        <div class="pagination-element"
-             @click="clickPagination(i)"
-             v-for="i in getPaginationLen + 1"
-             :key="i.id"
-             :class="{ black: i === currentPage, arrow: i === getPaginationLen + 1 }"
-        >
-          {{ `${i === getPaginationLen + 1 ? '' : i}` }}
+        <div class="posts-content-articles">
+          <div class="posts-content-articles-header">
+            <p class="posts-content-articles-header__text">
+              Articles & News
+            </p>
+          </div>
+          <div class="articles-content-cards">
+            <ArticleComponent
+              v-for="(article, idx) in curArray"
+              :key="idx"
+              :article="article"
+              :direction="directionArticle" />
+          </div>
+        </div>
+        <div class="pagination">
+          <div class="pagination-element"
+               @click="clickPagination(i)"
+               v-for="i in getPaginationLen + 1"
+               :key="i.id"
+               :class="{ black: i === currentPage, arrow: i === getPaginationLen + 1 }"
+          >
+            {{ `${i === getPaginationLen + 1 ? '' : i}` }}
+          </div>
         </div>
       </div>
     </div>
-    <router-view />
   </div>
 </template>
 
 <script>
 import ArticleComponent from '@/components/blog/ArticleComponent.vue'
 import { mapGetters } from 'vuex'
-import TopBannerComponent from "@/components/banner/TopBannerComponent.vue";
+import TopBannerComponent from '@/components/banner/TopBannerComponent.vue'
 
 export default {
   name: 'BlogComponent',
-  components: {TopBannerComponent, ArticleComponent },
+  components: { TopBannerComponent, ArticleComponent },
   data () {
     return {
       articles: [],
@@ -53,7 +55,11 @@ export default {
       directionArticle: 'column',
       currentPage: 1,
       curArray: [],
-      lastPost: {}
+      lastPost: {},
+      imgBanner: 'img/articles-news.png',
+      textLabel: 'Articles & News',
+      crumbs: 'Home / Blog',
+      tags: ['Bathroom', 'Bed Room', 'Kitchan', 'Living Area']
     }
   },
 
@@ -89,7 +95,7 @@ export default {
 .posts {
 
   &-content {
-    margin-top: 150px;
+    margin-top: 50px;
 
     &-wrapper {
       margin-bottom: 150px;
@@ -131,7 +137,7 @@ export default {
 
       border-radius: 62px;
       border: 1px solid #E7E7E7;
-      box-shadow: 0px 10px 30px 0px rgba(255, 255, 255, 0.25);
+      box-shadow: 0 10px 30px 0 rgba(255, 255, 255, 0.25);
 
       &-img {
         width: 100%;

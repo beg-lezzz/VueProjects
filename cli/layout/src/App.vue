@@ -1,8 +1,8 @@
 <template>
   <div id="app">
-    <header-component />
+    <HeaderComponent />
     <router-view />
-    <footer-component />
+    <FooterComponent />
   </div>
 </template>
 
@@ -26,6 +26,9 @@ export default {
 </script>
 
 <style lang="scss">
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Jost:ital,wght@0,100;0,400;0,600;0,800;1,200;1,400;1,600;1,800&family=Roboto+Mono:wght@100;300;600&display=swap');
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

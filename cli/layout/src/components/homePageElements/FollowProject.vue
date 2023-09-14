@@ -11,106 +11,31 @@
         </p>
       </div>
       <div class="projects-cards">
-        <div class="projects-card">
-          <div class="projects-card-image-wrapper">
-            <img class="projects-card-image projects-card__radius_top-right" src="../img/card-1.png" alt="" srcset="">
-          </div>
-          <div class="projects-card-description">
-            <div class="project-card-description__info">
-              <p class="projects-card-description__name">
-                Modern Kitchan
-              </p>
-              <p class="projects-card-description__crumb">
-                Decor / Artchitecture
-              </p>
-            </div>
-            <div class="project-card-description__button">
-              <a href="#">
-                <svg width="70" height="70" viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <circle cx="35" cy="35" r="35" fill="#F4F0EC"/>
-                  <path d="M32 44L40 35L32 26" stroke="#292F36" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </a>
-            </div>
-          </div>
-        </div>
-        <div class="projects-card">
-          <div class="projects-card-image-wrapper">
-            <img class="projects-card-image projects-card__radius_top-left" src="../img/card-2.png" alt="" srcset="">
-          </div>
-          <div class="projects-card-description">
-            <div class="project-card-description__info">
-              <p class="projects-card-description__name">
-                Modern Kitchan
-              </p>
-              <p class="projects-card-description__crumb">
-                Decor / Artchitecture
-              </p>
-            </div>
-            <div class="project-card-description__button">
-              <a href="#">
-                <svg width="70" height="70" viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <circle cx="35" cy="35" r="35" fill="#F4F0EC"/>
-                  <path d="M32 44L40 35L32 26" stroke="#292F36" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </a>
-            </div>
-          </div>
-        </div>
-        <div class="projects-card">
-          <div class="projects-card-image-wrapper">
-            <img class="projects-card-image projects-card__radius_bottom-right" src="../img/card-3.png" alt="" srcset="">
-          </div>
-          <div class="projects-card-description">
-            <div class="project-card-description__info">
-              <p class="projects-card-description__name">
-                Modern Kitchan
-              </p>
-              <p class="projects-card-description__crumb">
-                Decor / Artchitecture
-              </p>
-            </div>
-            <div class="project-card-description__button">
-              <a href="#">
-                <svg width="70" height="70" viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <circle cx="35" cy="35" r="35" fill="#F4F0EC"/>
-                  <path d="M32 44L40 35L32 26" stroke="#292F36" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </a>
-            </div>
-          </div>
-        </div>
-        <div class="projects-card">
-          <div class="projects-card-image-wrapper">
-            <img class="projects-card-image projects-card__radius_bottom-left" src="../img/card-4.png" alt="" srcset="">
-          </div>
-          <div class="projects-card-description">
-            <div class="project-card-description__info">
-              <p class="projects-card-description__name">
-                Modern Kitchan
-              </p>
-              <p class="projects-card-description__crumb">
-                Decor / Artchitecture
-              </p>
-            </div>
-            <div class="project-card-description__button">
-              <a href="#">
-                <svg width="70" height="70" viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <circle cx="35" cy="35" r="35" fill="#F4F0EC"/>
-                  <path d="M32 44L40 35L32 26" stroke="#292F36" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </a>
-            </div>
-          </div>
-        </div>
+        <ProjectComponent v-for="(project, idx) in projects" :key="project.id" :project="project" :location="location" :idx="idx" style="{border-radius: 60px}" />
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
+import ProjectComponent from '@/components/projects/ProjectComponent.vue'
+
 export default {
-  name: 'FollowProject'
+  name: 'FollowProject',
+  components: { ProjectComponent },
+  data () {
+    return {
+      projects: [],
+      location: 'home'
+    }
+  },
+  computed: {
+    ...mapGetters(['getFourProjects'])
+  },
+  mounted () {
+    this.projects = this.getFourProjects
+  }
 }
 </script>
 
@@ -153,17 +78,20 @@ export default {
   }
 
   &-cards {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    flex-direction: row;
-    gap: 30px;
+    //display: flex;
+    //justify-content: space-between;
+    //flex-wrap: wrap;
+    //flex-direction: row;
+    //gap: 30px;
+    width: 100%;
+    columns: 2;
   }
 
   &-card {
     display: flex;
     flex-direction: column;
     width: 48%;
+    max-height: 450px;
 
     &-image {
       height: 100%;

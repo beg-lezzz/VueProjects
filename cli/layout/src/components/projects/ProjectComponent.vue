@@ -1,15 +1,20 @@
 <template>
-  <div class="project-container">
-    <div class="project-container-wrapper">
-      <div class="projects-img-wrapper">
-        <img :src="project.imgProject" alt="">
-      </div>
-      <div class="project-footer">
-        <div class="project-footer__text">
-          <p class="project-text__header">
+  <div class="wrapper">
+    <router-link :to="{ name: 'project', params: { id: project.id }}">
+    <div class="container">
+      <div
+        class="imgwrapper"
+        :class="this.radius"
+        :style="{ background: `url(${project.imgProject}) no-repeat`,
+         height: `${this.imgHeight}px`,
+          width: `${this.imgWidth}px` }"
+      />
+      <div class="footer">
+        <div class="info">
+          <p class="info__header">
             {{ project.header }}
           </p>
-          <p class="project-text__crumbs">
+          <p class="info__crumbs">
             {{ project.crumbs }}
           </p>
         </div>
@@ -21,13 +26,44 @@
         </div>
       </div>
     </div>
+    </router-link>
   </div>
 </template>
 
 <script>
+
 export default {
   name: 'ProjectComponent',
-  props: ['project']
+  props: ['project', 'location', 'idx'],
+  data () {
+    return {
+      imgHeight: 0,
+      imgWidth: 0,
+      radius: ''
+    }
+  },
+  mounted () {
+    const img = new Image()
+    img.src = this.project.imgProject
+    this.imgHeight = img.height
+    this.imgWidth = img.width
+    if (this.location === 'home') {
+      switch (this.idx + 1) {
+        case 1:
+          this.radius = 'top__right'
+          break
+        case 2:
+          this.radius = 'bottom__right'
+          break
+        case 3:
+          this.radius = 'top__left'
+          break
+        case 4:
+          this.radius = 'bottom__left'
+          break
+      }
+    }
+  }
 }
 </script>
 
@@ -35,22 +71,42 @@ export default {
 * {
   box-sizing: border-box;
 }
-img {
+
+.img {
   width: 100%;
+  opacity: 0;
+}
+.container {
+  &:hover .imgwrapper {
+    opacity: 1;
+  }
+}
+.imgwrapper {
+  background-size: 100% 100%;
   opacity: 0.5;
 }
-.project-container {
+.top__left {
+  border-top-left-radius: 65px;
+}
+.top__right {
+  border-top-right-radius: 65px;
+}
+.bottom__left {
+  border-bottom-left-radius: 65px;
+}
+.bottom__right {
+  border-bottom-right-radius: 65px;
+}
+
+.wrapper {
   display: flex;
   flex-direction: column;
   gap: 25px;
   padding-bottom: 25px;
   break-inside: avoid-column;
   cursor: pointer;
-  &:hover img {
-    opacity: 1;
-  }
 }
-.project-text__header {
+.info__header {
   color: #292F36;
   font-family: DM Serif Display,sans-serif;
   font-size: 25px;
@@ -60,7 +116,7 @@ img {
   letter-spacing: 0.5px;
   text-align: left;
 }
-.project-text__crumbs {
+.info__crumbs {
   color: #4D5053;
   font-family: Jost,sans-serif;
   font-size: 22px;
@@ -70,7 +126,7 @@ img {
   letter-spacing: 0.22px;
   text-align: left;
 }
-.project-footer {
+.footer {
   display: flex;
   justify-content: space-between;
   padding-top: 25px;

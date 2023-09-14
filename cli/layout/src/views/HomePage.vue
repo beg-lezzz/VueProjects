@@ -1,8 +1,10 @@
+/* eslint-disable */
+
 <template>
   <div class="wrapper">
-    <top-component />
-    <follow-project />
-    <counter-achievements />
+    <TopComponent />
+    <FollowProject />
+    <CounterAchievements />
     <Articles />
   </div>
 </template>
@@ -11,10 +13,10 @@
 import TopComponent from '@/components/banner/TopComponent.vue'
 import FollowProject from '@/components/homePageElements/FollowProject.vue'
 import CounterAchievements from '@/components/homePageElements/CounterAchievements.vue'
-import Articles from '@/components/homePageElements/Articles.vue'
+import Articles from '@/components/homePageElements/ArticlesComponent.vue'
 
 export default {
-  name: 'Home',
+  name: 'HomePage',
   components: {
     Articles,
     CounterAchievements,

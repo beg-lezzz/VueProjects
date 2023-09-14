@@ -26,8 +26,10 @@ export default {
     clickTag (tag) {
       if (this.filterItem === tag) {
         this.filterItem = ''
+        this.$emit('ClickTag', this.filterItem)
       } else {
         this.filterItem = tag
+        this.$emit('ClickTag', this.filterItem)
       }
     }
   }
